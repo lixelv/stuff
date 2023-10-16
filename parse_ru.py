@@ -24,3 +24,5 @@ async def hello(message: types.Message):
 async def get_word(message: types.Message):
     await message.answer(f'`{get_ru(message.text)}`', parse_mode='MarkdownV2')
     
+if __name__ == "__main__":
+    executor.start_polling(dp, skip_updates=True)
