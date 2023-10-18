@@ -20,7 +20,7 @@ def get_ru(word):
 @dp.message_handler(commands=['start'])
 async def hello(message: types.Message):
     await message.answer(f'Привет `{message.from_user.id}`', parse_mode='MarkdownV2')
-    
+
 @dp.message_handler()
 async def get_word(message: types.Message):
     await message.answer(f'`{get_ru(message.text)}`', parse_mode='MarkdownV2')
@@ -29,6 +29,9 @@ if __name__ == "__main__":
     while True:
         try:
             executor.start_polling(dp, skip_updates=True)
+        except KeyboardInterrupt:
+            print("Выход...")
+            break
         except Exception as e:
             print(e)
             sleep(240)
