@@ -3,6 +3,12 @@ from time import sleep
 import requests
 from bs4 import BeautifulSoup as BS
 from aiogram import types, Bot, Dispatcher, executor
+import signal
+import os
+
+def signal_handler(sig, frame):
+    print("Выход...")
+    os.kill(os.getpid(), signal.SIGTERM)
 
 token = '6442961458:AAHSzpstZC7BgImelYPbuRSk3vQeJ_uzwG8'
 
@@ -26,12 +32,11 @@ async def get_word(message: types.Message):
     await message.answer(f'`{get_ru(message.text)}`', parse_mode='MarkdownV2')
     
 if __name__ == "__main__":
+    signal.signal(signal.SIGINT, signal_handler)
     while True:
         try:
             executor.start_polling(dp, skip_updates=True)
-        except KeyboardInterrupt:
-            print("Выход...")
-            break
+            
         except Exception as e:
             print(e)
             sleep(240)
