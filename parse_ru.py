@@ -1,4 +1,5 @@
 from ast import parse
+from time import sleep
 import requests
 from bs4 import BeautifulSoup as BS
 from aiogram import types, Bot, Dispatcher, executor
@@ -25,4 +26,9 @@ async def get_word(message: types.Message):
     await message.answer(f'`{get_ru(message.text)}`', parse_mode='MarkdownV2')
     
 if __name__ == "__main__":
-    executor.start_polling(dp, skip_updates=True)
+    while True:
+        try:
+            executor.start_polling(dp, skip_updates=True)
+        except Exception as e:
+            print(e)
+            sleep(240)
