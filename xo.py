@@ -2,9 +2,6 @@ from typing import List
 from colorama import init, Fore
 import os
 
-from numpy import isin
-from sympy import EX
-
 def clear_console():
     os.system('cls' if os.name == 'nt' else 'clear')
 
@@ -131,7 +128,7 @@ class Game:
             for row in self.matrix.matrix
         ]
         
-        return f'{" "*(max_width)}-'*self.size[0] + '\n' + '\n\n'.join([' '.join(row) for row in formatted_matrix]) + '\n' + f'{" "*(max_width-1)}-'*self.size[0]
+        return '\n\n' + '\n\n'.join([' '.join(row) for row in formatted_matrix]) + '\n\n'
 
         
 xo = 'o'
