@@ -1,0 +1,1793 @@
+{
+    "id": 100100339410034,
+    "text": "ЦИК России",
+    "href": "region/izbirkom?action=show&root=0&tvd=100100339410034&vrn=100100339410030&prver=0&pronetvd=null&region=0&sub_region=0",
+    "prver": "0",
+    "isUik": false,
+    "selected": false,
+    "load_on_demand": false,
+    "children": [
+      {
+        "id": 100100339410035,
+        "text": "Республика Адыгея (Адыгея)",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339410035&vrn=100100339410030&prver=0&pronetvd=null&region=1&sub_region=1",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339410036,
+        "text": "Республика Алтай",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339410036&vrn=100100339410030&prver=0&pronetvd=null&region=2&sub_region=2",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339410037,
+        "text": "Республика Башкортостан",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339410037&vrn=100100339410030&prver=0&pronetvd=null&region=3&sub_region=3",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411198,
+        "text": "Республика Бурятия",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411198&vrn=100100339410030&prver=0&pronetvd=null&region=4&sub_region=4",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411199,
+        "text": "Республика Дагестан",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411199&vrn=100100339410030&prver=0&pronetvd=null&region=5&sub_region=5",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411280,
+        "text": "Донецкая Народная Республика",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411280&vrn=100100339410030&prver=0&pronetvd=null&region=95&sub_region=95",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411200,
+        "text": "Республика Ингушетия",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411200&vrn=100100339410030&prver=0&pronetvd=null&region=6&sub_region=6",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411201,
+        "text": "Кабардино-Балкарская Республика",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411201&vrn=100100339410030&prver=0&pronetvd=null&region=7&sub_region=7",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411202,
+        "text": "Республика Калмыкия",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411202&vrn=100100339410030&prver=0&pronetvd=null&region=8&sub_region=8",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411203,
+        "text": "Карачаево-Черкесская Республика",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411203&vrn=100100339410030&prver=0&pronetvd=null&region=9&sub_region=9",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411204,
+        "text": "Республика Карелия",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411204&vrn=100100339410030&prver=0&pronetvd=null&region=10&sub_region=10",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411205,
+        "text": "Республика Коми",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411205&vrn=100100339410030&prver=0&pronetvd=null&region=11&sub_region=11",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411278,
+        "text": "Республика Крым",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411278&vrn=100100339410030&prver=0&pronetvd=null&region=93&sub_region=93",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411281,
+        "text": "Луганская Народная Республика",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411281&vrn=100100339410030&prver=0&pronetvd=null&region=96&sub_region=96",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411206,
+        "text": "Республика Марий Эл",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411206&vrn=100100339410030&prver=0&pronetvd=null&region=12&sub_region=12",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411207,
+        "text": "Республика Мордовия",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411207&vrn=100100339410030&prver=0&pronetvd=null&region=13&sub_region=13",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411208,
+        "text": "Республика Саха (Якутия)",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411208&vrn=100100339410030&prver=0&pronetvd=null&region=14&sub_region=14",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411209,
+        "text": "Республика Северная Осетия - Алания",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411209&vrn=100100339410030&prver=0&pronetvd=null&region=15&sub_region=15",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411210,
+        "text": "Республика Татарстан (Татарстан)",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411210&vrn=100100339410030&prver=0&pronetvd=null&region=16&sub_region=16",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411211,
+        "text": "Республика Тыва",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411211&vrn=100100339410030&prver=0&pronetvd=null&region=17&sub_region=17",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411212,
+        "text": "Удмуртская Республика",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411212&vrn=100100339410030&prver=0&pronetvd=null&region=18&sub_region=18",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411213,
+        "text": "Республика Хакасия",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411213&vrn=100100339410030&prver=0&pronetvd=null&region=19&sub_region=19",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411214,
+        "text": "Чеченская Республика",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411214&vrn=100100339410030&prver=0&pronetvd=null&region=20&sub_region=20",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411215,
+        "text": "Чувашская Республика - Чувашия",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411215&vrn=100100339410030&prver=0&pronetvd=null&region=21&sub_region=21",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411216,
+        "text": "Алтайский край",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411216&vrn=100100339410030&prver=0&pronetvd=null&region=22&sub_region=22",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411277,
+        "text": "Забайкальский край",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411277&vrn=100100339410030&prver=0&pronetvd=null&region=92&sub_region=92",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411276,
+        "text": "Камчатский край",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411276&vrn=100100339410030&prver=0&pronetvd=null&region=91&sub_region=91",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411217,
+        "text": "Краснодарский край",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411217&vrn=100100339410030&prver=0&pronetvd=null&region=23&sub_region=23",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411218,
+        "text": "Красноярский край",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411218&vrn=100100339410030&prver=0&pronetvd=null&region=24&sub_region=24",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411275,
+        "text": "Пермский край",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411275&vrn=100100339410030&prver=0&pronetvd=null&region=90&sub_region=90",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411219,
+        "text": "Приморский край",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411219&vrn=100100339410030&prver=0&pronetvd=null&region=25&sub_region=25",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411220,
+        "text": "Ставропольский край",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411220&vrn=100100339410030&prver=0&pronetvd=null&region=26&sub_region=26",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411221,
+        "text": "Хабаровский край",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411221&vrn=100100339410030&prver=0&pronetvd=null&region=27&sub_region=27",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411222,
+        "text": "Амурская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411222&vrn=100100339410030&prver=0&pronetvd=null&region=28&sub_region=28",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411223,
+        "text": "Архангельская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411223&vrn=100100339410030&prver=0&pronetvd=null&region=29&sub_region=29",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411224,
+        "text": "Астраханская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411224&vrn=100100339410030&prver=0&pronetvd=null&region=30&sub_region=30",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411225,
+        "text": "Белгородская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411225&vrn=100100339410030&prver=0&pronetvd=null&region=31&sub_region=31",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411226,
+        "text": "Брянская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411226&vrn=100100339410030&prver=0&pronetvd=null&region=32&sub_region=32",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411227,
+        "text": "Владимирская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411227&vrn=100100339410030&prver=0&pronetvd=null&region=33&sub_region=33",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411228,
+        "text": "Волгоградская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411228&vrn=100100339410030&prver=0&pronetvd=null&region=34&sub_region=34",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411229,
+        "text": "Вологодская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411229&vrn=100100339410030&prver=0&pronetvd=null&region=35&sub_region=35",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411230,
+        "text": "Воронежская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411230&vrn=100100339410030&prver=0&pronetvd=null&region=36&sub_region=36",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411282,
+        "text": "Запорожская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411282&vrn=100100339410030&prver=0&pronetvd=null&region=97&sub_region=97",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411231,
+        "text": "Ивановская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411231&vrn=100100339410030&prver=0&pronetvd=null&region=37&sub_region=37",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411232,
+        "text": "Иркутская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411232&vrn=100100339410030&prver=0&pronetvd=null&region=38&sub_region=38",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411233,
+        "text": "Калининградская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411233&vrn=100100339410030&prver=0&pronetvd=null&region=39&sub_region=39",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411234,
+        "text": "Калужская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411234&vrn=100100339410030&prver=0&pronetvd=null&region=40&sub_region=40",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411235,
+        "text": "Кемеровская область - Кузбасс",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411235&vrn=100100339410030&prver=0&pronetvd=null&region=42&sub_region=42",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411236,
+        "text": "Кировская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411236&vrn=100100339410030&prver=0&pronetvd=null&region=43&sub_region=43",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411237,
+        "text": "Костромская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411237&vrn=100100339410030&prver=0&pronetvd=null&region=44&sub_region=44",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411238,
+        "text": "Курганская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411238&vrn=100100339410030&prver=0&pronetvd=null&region=45&sub_region=45",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411239,
+        "text": "Курская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411239&vrn=100100339410030&prver=0&pronetvd=null&region=46&sub_region=46",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411240,
+        "text": "Ленинградская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411240&vrn=100100339410030&prver=0&pronetvd=null&region=47&sub_region=47",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411241,
+        "text": "Липецкая область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411241&vrn=100100339410030&prver=0&pronetvd=null&region=48&sub_region=48",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411242,
+        "text": "Магаданская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411242&vrn=100100339410030&prver=0&pronetvd=null&region=49&sub_region=49",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411243,
+        "text": "Московская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411243&vrn=100100339410030&prver=0&pronetvd=null&region=50&sub_region=50",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411244,
+        "text": "Мурманская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411244&vrn=100100339410030&prver=0&pronetvd=null&region=51&sub_region=51",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411245,
+        "text": "Нижегородская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411245&vrn=100100339410030&prver=0&pronetvd=null&region=52&sub_region=52",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411246,
+        "text": "Новгородская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411246&vrn=100100339410030&prver=0&pronetvd=null&region=53&sub_region=53",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411247,
+        "text": "Новосибирская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411247&vrn=100100339410030&prver=0&pronetvd=null&region=54&sub_region=54",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411248,
+        "text": "Омская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411248&vrn=100100339410030&prver=0&pronetvd=null&region=55&sub_region=55",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411249,
+        "text": "Оренбургская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411249&vrn=100100339410030&prver=0&pronetvd=null&region=56&sub_region=56",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411250,
+        "text": "Орловская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411250&vrn=100100339410030&prver=0&pronetvd=null&region=57&sub_region=57",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411251,
+        "text": "Пензенская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411251&vrn=100100339410030&prver=0&pronetvd=null&region=58&sub_region=58",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411252,
+        "text": "Псковская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411252&vrn=100100339410030&prver=0&pronetvd=null&region=60&sub_region=60",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411253,
+        "text": "Ростовская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411253&vrn=100100339410030&prver=0&pronetvd=null&region=61&sub_region=61",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411254,
+        "text": "Рязанская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411254&vrn=100100339410030&prver=0&pronetvd=null&region=62&sub_region=62",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411255,
+        "text": "Самарская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411255&vrn=100100339410030&prver=0&pronetvd=null&region=63&sub_region=63",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411256,
+        "text": "Саратовская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411256&vrn=100100339410030&prver=0&pronetvd=null&region=64&sub_region=64",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411257,
+        "text": "Сахалинская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411257&vrn=100100339410030&prver=0&pronetvd=null&region=65&sub_region=65",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411258,
+        "text": "Свердловская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411258&vrn=100100339410030&prver=0&pronetvd=null&region=66&sub_region=66",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411259,
+        "text": "Смоленская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411259&vrn=100100339410030&prver=0&pronetvd=null&region=67&sub_region=67",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411260,
+        "text": "Тамбовская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411260&vrn=100100339410030&prver=0&pronetvd=null&region=68&sub_region=68",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411261,
+        "text": "Тверская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411261&vrn=100100339410030&prver=0&pronetvd=null&region=69&sub_region=69",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411262,
+        "text": "Томская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411262&vrn=100100339410030&prver=0&pronetvd=null&region=70&sub_region=70",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411263,
+        "text": "Тульская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411263&vrn=100100339410030&prver=0&pronetvd=null&region=71&sub_region=71",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411264,
+        "text": "Тюменская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411264&vrn=100100339410030&prver=0&pronetvd=null&region=72&sub_region=72",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411265,
+        "text": "Ульяновская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411265&vrn=100100339410030&prver=0&pronetvd=null&region=73&sub_region=73",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411283,
+        "text": "Херсонская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411283&vrn=100100339410030&prver=0&pronetvd=null&region=98&sub_region=98",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411266,
+        "text": "Челябинская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411266&vrn=100100339410030&prver=0&pronetvd=null&region=74&sub_region=74",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411267,
+        "text": "Ярославская область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411267&vrn=100100339410030&prver=0&pronetvd=null&region=76&sub_region=76",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411268,
+        "text": "город Москва",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411268&vrn=100100339410030&prver=0&pronetvd=null&region=77&sub_region=77",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411269,
+        "text": "город Санкт-Петербург",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411269&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": false,
+        "children": [
+          {
+            "id": 27820002162291,
+            "text": "Территориальная избирательная комиссия №1",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162291&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162292,
+            "text": "Территориальная избирательная комиссия №2",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162292&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": true,
+            "load_on_demand": false,
+            "children": [
+              {
+                "id": 4784002486288,
+                "text": "УИК №158",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486288&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486289,
+                "text": "УИК №159",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486289&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486290,
+                "text": "УИК №160",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486290&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486291,
+                "text": "УИК №161",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486291&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486292,
+                "text": "УИК №162",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486292&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486293,
+                "text": "УИК №163",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486293&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486294,
+                "text": "УИК №164",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486294&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486295,
+                "text": "УИК №165",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486295&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486296,
+                "text": "УИК №166",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486296&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486297,
+                "text": "УИК №167",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486297&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486298,
+                "text": "УИК №168",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486298&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486299,
+                "text": "УИК №169",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486299&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486300,
+                "text": "УИК №170",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486300&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486301,
+                "text": "УИК №171",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486301&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486302,
+                "text": "УИК №172",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486302&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486303,
+                "text": "УИК №173",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486303&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486304,
+                "text": "УИК №174",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486304&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486305,
+                "text": "УИК №175",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486305&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486306,
+                "text": "УИК №176",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486306&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486307,
+                "text": "УИК №177",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486307&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486308,
+                "text": "УИК №178",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486308&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486309,
+                "text": "УИК №179",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486309&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              },
+              {
+                "id": 4784002486310,
+                "text": "УИК №182",
+                "href": "region/izbirkom?action=show&root=782000083&tvd=4784002486310&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+                "prver": "0",
+                "isUik": true,
+                "selected": false,
+                "load_on_demand": false,
+                "children": []
+              }
+            ]
+          },
+          {
+            "id": 27820002162233,
+            "text": "Территориальная избирательная комиссия №3",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162233&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162287,
+            "text": "Территориальная избирательная комиссия №4",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162287&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162270,
+            "text": "Территориальная избирательная комиссия №5",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162270&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162226,
+            "text": "Территориальная избирательная комиссия №6   ",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162226&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162306,
+            "text": "Территориальная избирательная комиссия №7 ",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162306&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162272,
+            "text": "Территориальная избирательная комиссия №8",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162272&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162249,
+            "text": "Территориальная избирательная комиссия №9",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162249&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162235,
+            "text": "Территориальная избирательная комиссия №10  ",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162235&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162277,
+            "text": "Территориальная избирательная комиссия №11  ",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162277&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162302,
+            "text": "Территориальная избирательная комиссия №12",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162302&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162273,
+            "text": "Территориальная избирательная комиссия №13",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162273&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162248,
+            "text": "Территориальная избирательная комиссия №14",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162248&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162283,
+            "text": "Территориальная избирательная комиссия №15",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162283&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162218,
+            "text": "Территориальная избирательная комиссия №16  ",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162218&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162244,
+            "text": "Территориальная избирательная комиссия №17",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162244&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162284,
+            "text": "Территориальная избирательная комиссия №18",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162284&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162303,
+            "text": "Территориальная избирательная комиссия №19  ",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162303&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162222,
+            "text": "Территориальная избирательная комиссия №20",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162222&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162234,
+            "text": "Территориальная избирательная комиссия №21",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162234&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162251,
+            "text": "Территориальная избирательная комиссия №22",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162251&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162238,
+            "text": "Территориальная избирательная комиссия №23",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162238&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162262,
+            "text": "Территориальная избирательная комиссия №24  ",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162262&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162215,
+            "text": "Территориальная избирательная комиссия №25",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162215&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162282,
+            "text": "Территориальная избирательная комиссия №26",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162282&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162230,
+            "text": "Территориальная избирательная комиссия №27",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162230&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162214,
+            "text": "Территориальная избирательная комиссия №28",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162214&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162280,
+            "text": "Территориальная избирательная комиссия №29",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162280&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162286,
+            "text": "Территориальная избирательная комиссия №30",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162286&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162216,
+            "text": "Территориальная избирательная комиссия №31",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162216&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162217,
+            "text": "Территориальная избирательная комиссия №32",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162217&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162221,
+            "text": "Территориальная избирательная комиссия №33",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162221&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162281,
+            "text": "Территориальная избирательная комиссия №34",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162281&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162311,
+            "text": "Территориальная избирательная комиссия №35",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162311&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162271,
+            "text": "Территориальная избирательная комиссия №36",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162271&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162239,
+            "text": "Территориальная избирательная комиссия №37  ",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162239&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162250,
+            "text": "Территориальная избирательная комиссия №38",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162250&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162274,
+            "text": "Территориальная избирательная комиссия №39  ",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162274&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162310,
+            "text": "Территориальная избирательная комиссия №40",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162310&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162210,
+            "text": "Территориальная избирательная комиссия №41   ",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162210&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162269,
+            "text": "Территориальная избирательная комиссия №42",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162269&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162252,
+            "text": "Территориальная избирательная комиссия №43",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162252&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162253,
+            "text": "Территориальная избирательная комиссия №44  ",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162253&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162247,
+            "text": "Территориальная избирательная комиссия №45",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162247&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162288,
+            "text": "Территориальная избирательная комиссия №46  ",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162288&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162309,
+            "text": "Территориальная избирательная комиссия №47",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162309&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162298,
+            "text": "Территориальная избирательная комиссия №48",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162298&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162257,
+            "text": "Территориальная избирательная комиссия №49",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162257&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162294,
+            "text": "Территориальная избирательная комиссия №50   ",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162294&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162285,
+            "text": "Территориальная избирательная комиссия №51",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162285&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162245,
+            "text": "Территориальная избирательная комиссия №52",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162245&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162242,
+            "text": "Территориальная избирательная комиссия №53",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162242&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162256,
+            "text": "Территориальная избирательная комиссия №54",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162256&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162268,
+            "text": "Территориальная избирательная комиссия №55",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162268&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162293,
+            "text": "Территориальная избирательная комиссия №56",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162293&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162223,
+            "text": "Территориальная избирательная комиссия №57  ",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162223&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162258,
+            "text": "Территориальная избирательная комиссия №58   ",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162258&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162243,
+            "text": "Территориальная избирательная комиссия №59",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162243&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162232,
+            "text": "Территориальная избирательная комиссия №60",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162232&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162231,
+            "text": "Территориальная избирательная комиссия №61",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162231&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162265,
+            "text": "Территориальная избирательная комиссия №62  ",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162265&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162246,
+            "text": "Территориальная избирательная комиссия №63",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162246&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          },
+          {
+            "id": 27820002162299,
+            "text": "Территориальная избирательная комиссия №64  ",
+            "href": "region/izbirkom?action=show&root=1000075&tvd=27820002162299&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78",
+            "prver": "0",
+            "isUik": false,
+            "selected": false,
+            "load_on_demand": true,
+            "children": []
+          }
+        ]
+      },
+      {
+        "id": 100100339411279,
+        "text": "город Севастополь",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411279&vrn=100100339410030&prver=0&pronetvd=null&region=94&sub_region=94",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411270,
+        "text": "Еврейская автономная область",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411270&vrn=100100339410030&prver=0&pronetvd=null&region=79&sub_region=79",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411271,
+        "text": "Ненецкий автономный округ",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411271&vrn=100100339410030&prver=0&pronetvd=null&region=83&sub_region=83",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411272,
+        "text": "Ханты-Мансийский автономный округ - Югра",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411272&vrn=100100339410030&prver=0&pronetvd=null&region=86&sub_region=86",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411273,
+        "text": "Чукотский автономный округ",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411273&vrn=100100339410030&prver=0&pronetvd=null&region=87&sub_region=87",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100339411274,
+        "text": "Ямало-Ненецкий автономный округ",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100339411274&vrn=100100339410030&prver=0&pronetvd=null&region=89&sub_region=89",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100340344875,
+        "text": "Город Байконур (Республика Казахстан)",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100340344875&vrn=100100339410030&prver=0&pronetvd=null&region=0&sub_region=0",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      },
+      {
+        "id": 100100340344874,
+        "text": "Территория за пределами РФ",
+        "href": "region/izbirkom?action=show&root=1&tvd=100100340344874&vrn=100100339410030&prver=0&pronetvd=null&region=0&sub_region=0",
+        "prver": "0",
+        "isUik": false,
+        "selected": false,
+        "load_on_demand": true,
+        "children": []
+      }
+    ]
+  }

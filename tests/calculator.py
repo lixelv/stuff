@@ -1,6 +1,6 @@
 class MyNumber(int):
-    def __new__(cls, *args, **kwargs):
-        return super(MyNumber, cls).__new__(cls, *args, **kwargs)
+    def __new__(cls, *key, **kwkey):
+        return super(MyNumber, cls).__new__(cls, *key, **kwkey)
 
 a = MyNumber(5)
 a.d = 6

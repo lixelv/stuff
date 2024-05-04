@@ -231,17 +231,17 @@ def simple_assembler(program):
     while cursor < len(program):
         line = program[cursor]
         cmd = line.split(' ')[0]
-        args = line.split(' ')[1:]
+        key = line.split(' ')[1:]
         
         if cmd == "mov":
-            registers[args[0]] = read(args[1], registers)
+            registers[key[0]] = read(key[1], registers)
         elif cmd == "dec":
-            registers[args[0]] -= 1
+            registers[key[0]] -= 1
         elif cmd == "inc":
-            registers[args[0]] += 1
+            registers[key[0]] += 1
         elif cmd == "jnz":
-            if registers[args[0]] != 0:
-                cursor += read(args[1], registers) - 1
+            if registers[key[0]] != 0:
+                cursor += read(key[1], registers) - 1
             
         cursor += 1
     

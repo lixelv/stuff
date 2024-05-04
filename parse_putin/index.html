@@ -1,0 +1,2252 @@
+
+<!DOCTYPE HTML>
+
+<html>
+<head>
+<base href="http://www.st-petersburg.vybory.izbirkom.ru/"/>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="BweLx0lKhC6wGw5J" name="sputnik-verification">
+<meta content="E60eHgticywjGWA4" name="sputnik-verification">
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-datepicker3.min.css" rel="stylesheet"/>
+<link href="css/bootstrap-multiselect.min.css" rel="stylesheet"/>
+<link href="css/icon.css" rel="stylesheet"/>
+<link href="css/all.css" rel="stylesheet"/>
+<link href="css/datatables.min.css" rel="stylesheet"/>
+<link href="css/bvi/bvi.min.css" rel="stylesheet"/>
+<link href="css/styleNew.css" rel="stylesheet"/>
+<link href="css/select2.min.css" rel="stylesheet"/>
+<script src="js/fp.min.js"></script>
+<script src="js/popper.min.js" type="text/javascript"></script>
+<script src="js/jquery-3.5.1.min.js" type="text/javascript"></script>
+<script defer="" src="js/bootstrap-multiselect.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.bundle.min.js" type="text/javascript"></script>
+<script src="js/bootstrap-datepicker.min.js" type="text/javascript"></script>
+<script src="js/locales/bootstrap-datepicker.ru.min.js" type="text/javascript"></script>
+<script src="js/new_calendar/new_calendar_scripts.js" type="text/javascript"></script>
+<script src="js/bootstrap-multiselect.min.js" type="text/javascript"></script>
+<script src="js/luxon.min.js" type="text/javascript"></script>
+<script src="js/datatables.min.js" type="text/javascript"></script>
+<script src="js/simplePag.js" type="text/javascript"></script>
+<script src="js/moment.js" type="text/javascript"></script>
+<script src="js/datetime-moment.js" type="text/javascript"></script>
+<script src="js/scriptenets.js" type="text/javascript"></script>
+<script src="js/select2.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+
+
+        $(document).ready(function () {
+
+            let isInetCopy = 'true';
+
+            if (isInetCopy === 'true') {
+
+                $(".link-to-summery-table").remove();
+
+            }
+
+        });
+
+
+
+        fpactionxyz('http://www.st-petersburg.vybory.izbirkom.ru/');
+
+        $(document).ready(function () {
+
+            $(document.body).prepend('<a href="#" class="bvi-open" title="Версия сайта для слабовидящих" style="float: right;margin-right: 25px;">Версия сайта для слабовидящих</a>');
+
+            $.bvi({
+
+            	'bvi_target' : '.bvi-open', // Класс ссылки включения плагина
+
+            	"bvi_theme" : "black", // Цвет сайта
+
+            	"bvi_font" : "arial", // Шрифт
+
+            	"bvi_font_size" : 16, // Размер шрифта
+
+            	"bvi_letter_spacing" : "normal", // Межбуквенный интервал
+
+            	"bvi_line_height" : "normal", // Междустрочный интервал
+
+            	"bvi_images" : true, // Изображения
+
+            	"bvi_reload" : true, // Перезагрузка страницы при выключении плагина
+
+            	"bvi_fixed" : false, // Фиксирование панели для слабовидящих вверху страницы
+
+            	"bvi_tts" : false, // Синтез речи
+
+            	"bvi_flash_iframe" : true, // Встроенные элементы (видео, карты и тд.)
+
+            	"bvi_hide" : false // Скрывает панель для слабовидящих и показывает иконку панели.
+
+            });
+
+
+
+            localStorage.setItem("filtered-list", "/region/izbirkom");
+
+            if ($('.page-link').length > 1) {
+
+                var pageNum = window.location.href.match(/number=(\d+)/)
+
+                var link = $('.page-link').attr('href') == undefined ? $('.page-link').eq($('.page-link').length - 1).attr('href') : $('.page-link').attr('href')
+
+                if (localStorage.getItem('page') != null && pageNum != null) {
+
+                    if (pageNum[1] == localStorage.getItem('page')) {
+
+                        $('.pagination-new').pagination({
+
+                            items: $('.page-item').length,
+
+                            prevText: '',
+
+                            currentPage: localStorage.getItem('page'),
+
+                            nextText: '',
+
+                            displayedPages: 15,
+
+                            hrefTextPrefix: link.replace(/\d+$/, ''),
+
+                            cssStyle: 'light-theme'
+
+                        });
+
+                    } else {
+
+                        $('.pagination-new').pagination({
+
+                            items: $('.page-item').length,
+
+                            prevText: '',
+
+                            nextText: '',
+
+                            currentPage: pageNum[1],
+
+                            displayedPages: 15,
+
+                            hrefTextPrefix: link.replace(/\d+$/, ''),
+
+                            cssStyle: 'light-theme'
+
+                        });
+
+                    }
+
+                } else {
+
+                    $('.pagination-new').pagination({
+
+                        items: $('.page-item').length,
+
+                        prevText: '',
+
+                        nextText: '',
+
+                        displayedPages: 15,
+
+                        hrefTextPrefix: link.replace(/\d+$/, ''),
+
+                        cssStyle: 'light-theme'
+
+                    });
+
+                }
+
+                $('.pagination-new a').click(function () {
+
+                    localStorage.setItem('page', $(this).text())
+
+                });
+
+            } //else localStorage.removeItem('page');
+
+
+
+            $.fn.dataTable.moment("DD.MM.YYYY");
+
+
+
+            var p = $('#politparty,#politparty2').DataTable({
+
+                paging: false,
+
+                searching: false,
+
+                info: false,
+
+                order: [1, 'asc'],
+
+                //orderClasses: true,
+
+                language: {
+
+                    emptyTable: "Нет данных для построения отчета"
+
+                },
+
+                orderCellsTop: true,
+
+            });
+
+
+
+            var t = $('#candidates-220-2,#candidates-221-1,#candidates-221-2').DataTable({
+
+                paging: false,
+
+                searching: false,
+
+                info: false,
+
+                order: [0, 'asc', 1, 'asc'],
+
+                //orderClasses: true,
+
+                language: {
+
+                    emptyTable: "Нет данных для построения отчета"
+
+                },
+
+                columnDefs: [{
+
+                    "targets": 0,
+
+                    "orderable": false,
+
+                    "searchable": false
+
+                }],
+
+                orderCellsTop: true,
+
+            });
+
+
+
+            var z = $('#candidates-220-1').DataTable({
+
+                paging: false,
+
+                searching: false,
+
+                info: false,
+
+                order: [[3, 'asc'], [5, 'asc']],
+
+                //orderClasses: true,
+
+                language: {
+
+                    emptyTable: "Нет данных для построения отчета"
+
+                },
+
+                columnDefs: [{
+
+                    "targets": 0,
+
+                    "orderable": false,
+
+                    "searchable": false
+
+                }],
+
+                orderCellsTop: true,
+
+            });
+
+
+
+
+
+            var b = parseInt(z.cells().data()[0])
+
+
+
+            var pageNumber = parseInt($('li.active > span.current').text())
+
+
+
+            if (z.column(0, {page: 'current'}).nodes() != undefined) {
+
+                z.column(0, {page: 'current'}).nodes().each(function (cell, i) {
+
+                    isNaN(pageNumber) ? cell.innerHTML = i + 1 : cell.innerHTML = (i + 1) + ((pageNumber - 1) * 20);
+
+                    //	b != 1 && $('.page-link').length > 1 ? cell.innerHTML = i + b : cell.innerHTML = i + 1
+
+                });
+
+
+
+                z.on('order', function () {
+
+                    z.column(0, {page: 'current'}).nodes().each(function (cell, i) {
+
+                        isNaN(pageNumber) ? cell.innerHTML = i + 1 : cell.innerHTML = (i + 1) + ((pageNumber - 1) * 20);
+
+                    });
+
+                })
+
+
+
+            }
+
+
+
+            if (p.column(0, {page: 'current'}).nodes() != undefined) {
+
+                p.column(0, {page: 'current'}).nodes().each(function (cell, i) {
+
+                    isNaN(pageNumber) ? cell.innerHTML = i + 1 : cell.innerHTML = (i + 1) + ((pageNumber - 1) * 20);
+
+                    //	b != 1 && $('.page-link').length > 1 ? cell.innerHTML = i + b : cell.innerHTML = i + 1
+
+                });
+
+
+
+                p.on('order', function () {
+
+                    p.column(0, {page: 'current'}).nodes().each(function (cell, i) {
+
+                        isNaN(pageNumber) ? cell.innerHTML = i + 1 : cell.innerHTML = (i + 1) + ((pageNumber - 1) * 20);
+
+                    });
+
+                })
+
+
+
+            }
+
+
+
+            var a = parseInt(t.cells().data()[0])
+
+
+
+            if (t.column(0, {page: 'current'}).nodes() != undefined) {
+
+                t.column(0, {page: 'current'}).nodes().each(function (cell, i) {
+
+                    isNaN(pageNumber) ? cell.innerHTML = i + 1 : cell.innerHTML = (i + 1) + ((pageNumber - 1) * 20);
+
+                });
+
+
+
+                t.on('order', function () {
+
+                    t.column(0, {page: 'current'}).nodes().each(function (cell, i) {
+
+                        isNaN(pageNumber) ? cell.innerHTML = i + 1 : cell.innerHTML = (i + 1) + ((pageNumber - 1) * 20);
+
+                    });
+
+                })
+
+            }
+
+
+
+
+
+            $('.dataTables_length').addClass('bs-select');
+
+
+
+            if (localStorage.getItem("treeState") == 'true') {
+
+                closeTree();
+
+            } else openTree();
+
+
+
+        });
+
+
+
+        $(document).ready(function () {
+
+            $(".nav-link").click(function () {
+
+                localStorage.removeItem('page');
+
+                $(".nav-link.active.show").parent().css("background", "none");
+
+                $(this).parent().css("background", "rgba(255, 255, 255, 0.2)");
+
+                $(".rep-name").text("");
+
+                $(".breadcrumb-repname").text("");
+
+            });
+
+            $(".nav-link.active.show").parent().css("background", "rgba(255, 255, 255, 0.2)");
+
+            $("#report-body-link").parent().css("background", "none");
+
+        });
+
+
+
+        $(document).ready(function () {
+
+            let name = $("#rep-name").text();
+
+            let namio220 = $(".namio220").text().trim();
+
+            if (namio220 != "") {
+
+                $(".breadcrumb").append("<li class='breadcrumb-repname'>&ensp;&frasl;&ensp;" + name + namio220 + "</li>");
+
+            } else $(".breadcrumb").append("<li class='breadcrumb-repname'>&ensp;&frasl;&ensp;" + name + "</li>");
+
+        });
+
+
+
+        function hideSidebar() {
+
+
+
+            if ($("#sidebar").css("left") == "-338px" && $(".page-wrapper").hasClass("toggled")) {
+
+                $(".page-wrapper").toggleClass("toggled");
+
+                $("#show-sidebar,.close-m").click(function () {
+
+                    $("#sidebar").css('left', 0);
+
+                });
+
+                $("#close-sidebar,.close-m").click(function () {
+
+                    $("#sidebar").css('left', -338);
+
+                })
+
+            }
+
+        }
+
+
+
+        $(document).ready(function () {
+
+            let link = localStorage.getItem("election-link");
+
+            if (link === "" || link == null) {
+
+                $(".election-card").hide();
+
+            }
+
+        });
+
+        $(document).ready(function () {
+
+            hideSidebar();
+
+            $("#close-sidebar").click(function () {
+
+                $(".page-wrapper").toggleClass("toggled");
+
+            });
+
+            $("#show-sidebar").click(function () {
+
+                $(".page-wrapper").toggleClass("toggled");
+
+            });
+
+        });
+
+        $(document).ready(function () {
+
+            let link = localStorage.getItem("election-link");
+
+            $(".election-card").attr("href", link);
+
+        });
+
+    </script>
+<title>Сведения о проводящихся выборах и референдумах</title>
+<meta content="no-cache" http-equiv="pragma"/>
+<meta content="no-cache" http-equiv="cache-control"/>
+<meta content="0" http-equiv="expires"/>
+</meta></meta></head>
+<body>
+<div class="loader-template">
+<div class="loader"></div>
+</div>
+<div class="page-wrapper toggled">
+<div id="show-sidebar" style="margin-top: 35px;margin-left: 15px;">
+<i class="material-icons close-m" style="font-size: 30px;color: #13232F;cursor: pointer">menu</i>
+</div>
+<div id="mobile__menu__nav">
+<img alt="Закрыть" class="close-mobile-menu" src="/img/close-mobile.svg"/>
+<div class="img-banner">
+<img alt="" src="/img/cikeml.png" style="z-index: 20;width: 100%;height: 100%"/>
+</div>
+<div id="calendar-title-nav-mobile">
+<h4><a href="http://www.st-petersburg.vybory.izbirkom.ru/region/izbirkom" id="calendar-btn-mobile">Календарь
+
+                выборов</a></h4>
+</div>
+<div id="election-nav-mobile">
+<a class="rep-name"></a>
+<ul class="nav flex-column" id="election-nav-items-mobile">
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#election-info" id="election-info-name-mobile"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#standard-reports" id="standard-reports-name-mobile"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#election-process" id="election-process-name-mobile"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#digital-election-sites" id="digital-election-sites-name-mobile"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#digital-election-vote" id="digital-election-vote-name-mobile"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#digital-remote-election-data" id="digital-remote-election-data-name-mobile"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#information-about-candidates" id="information-about-candidates-name-mobile"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#payment-results" id="payment-results-name-mobile"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#election-results" id="election-results-name-mobile"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#vote-results" id="vote-results-name-mobile"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#report-body" id="report-body-link-mobile"></a>
+</div>
+</ul>
+</div>
+</div>
+<nav class="sidebar-wrapper" id="sidebar">
+<div class="sidebar-content">
+<a href="http://www.cikrf.ru/">
+<img alt="" src="/img/cikeml.png" style="position: absolute; width: 100% "/>
+</a>
+<div class="sidebar-brand" id="sidebar-brand">
+<div id="close-sidebar">
+<i class="material-icons" style="font-size: 30px;color: #ffffff;margin-top: 25px;">arrow_back</i>
+</div>
+</div>
+<div class="main__menu">
+<div id="calendar-title-nav">
+<h4><a href="http://www.st-petersburg.vybory.izbirkom.ru/region/izbirkom" id="calendar-btn">Календарь
+
+                        выборов</a></h4>
+</div>
+<div id="election-nav">
+<a class="rep-name"></a>
+<ul class="nav flex-column" id="election-nav-items">
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#election-info" id="election-info-name"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#standard-reports" id="standard-reports-name"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#election-process" id="election-process-name"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#digital-election-sites" id="digital-election-sites-name"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#digital-election-vote" id="digital-election-vote-name"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#digital-remote-election-data" id="digital-remote-election-data-name"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#information-about-candidates" id="information-about-candidates-name"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#payment-results" id="payment-results-name"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#election-results" id="election-results-name"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#vote-results" id="vote-results-name"></a>
+</div>
+<div class="nav-link-container">
+<a class="nav-link" data-toggle="tab" href="#report-body" id="report-body-link"></a>
+</div>
+</ul>
+</div>
+</div>
+</div>
+</nav>
+<!-- sidebar-wrapper  -->
+<main class="page-content">
+<div class="container-fluid">
+<div class="row justify-content-center">
+<!--<p class="text-center" style="margin:0;padding: 5px;line-height: 15px;font-size: 15px">На сайте проводятся технические работы, возможны кратковременные периоды недоступности сайта.</p>-->
+</div>
+</div>
+<div class="container-fluid rep-container" style="padding: 0 25px;">
+<ul class="breadcrumb">
+<li class="treeIcon" style="display: none"><i class="material-icons" style="color: #1A7FC7;cursor: pointer;margin-right: 10px">menu</i>
+</li>
+<li><a href="region/st-petersburg?action=show&amp;root_a=1000075&amp;vrn=100100339410030®ion=78&amp;global=null&amp;type=0&amp;sub_region=78&amp;prver=0&amp;pronetvd=null">ЦИК России</a></li>  ⁄  <li><a href="region/st-petersburg?action=show&amp;root_a=1000075&amp;vrn=100100339410030®ion=78&amp;global=null&amp;type=0&amp;sub_region=78&amp;root=1000075&amp;prver=0&amp;pronetvd=null&amp;tvd=100100339411269">город Санкт-Петербург</a></li>  ⁄  <li><a href="region/st-petersburg?action=show&amp;root_a=1000075&amp;vrn=100100339410030®ion=78&amp;global=null&amp;type=0&amp;sub_region=78&amp;root=782000083&amp;prver=0&amp;pronetvd=null&amp;tvd=27820002162292">Территориальная избирательная комиссия №2</a></li>
+</ul>
+<br/>
+<div class="row" style="margin-right: 0!important;">
+<div class="col-12 col-md-4 tree" id="jstree_demo_div" style="background: rgb(247, 247, 247);margin: 0px 15px;">
+<div class="hideTree" style="display: flex;margin-left: 10px;margin-top: 10px;cursor: pointer"><i class="material-icons hideTreeIcon" style="color: #1A7FC7;height: 100%;margin-left: -21px;">arrow_back</i><span class="tvd"></span></div>
+</div>
+<div class="col" style="overflow: auto;height: 100%;-webkit-overflow-scrolling: touch;">
+<div class="tab-content" id="report-body col">
+<div class="row" hidden="true" xmlns="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd" xmlns:exsl="http://exslt.org/common">
+<div class="col">
+<h1 id="vib-name">Выборы Президента Российской Федерации</h1>
+</div>
+</div><div class="row" hidden="true">
+<div class="col" id="election-info-name-gen">
+
+							Сведения о выборах
+
+						</div>
+</div><div class="row" id="election-title" style="align-items: center">
+<div class="col-sm-12 col-md-12">
+<div class="d-flex">
+<div class="d-flex mobile-menu-button" style="cursor: pointer;align-items: baseline;margin-top: 10px;">
+<img alt="Меню" src="/img/mobile_menu.svg"/></div>
+<h1 class="report-title"></h1>
+</div>
+</div>
+<div class="col-sm-12 col-md-12">
+<div class="d-flex justify-content-end backTo">
+<a class="btn btn-primary" href="" id="go-to-elections-list" onclick="setRedirectFlag()" role="button">Назад к списку</a>
+</div>
+</div>
+</div><div class="tab-pane fade" id="election-info">
+<div class="container-fluid" style="padding:0;">
+<div class="row mb-4" style="border-bottom:1px solid #EDEDED">
+<div class="col-md-6 text-left">Наименование комиссии</div>
+<div class="col-md-6 text-right" id="election-commission-name-gen">
+<b>Территориальная избирательная комиссия №2</b>
+</div>
+</div>
+<div class="row mb-4" style="border-bottom:1px solid #EDEDED">
+<div class="col-md-6 text-left">
+
+									Дата официального опубликования (публикации)
+
+									решения о назначении выборов/референдума
+
+								</div>
+<div class="col-md-6 text-right">
+<b>07.12.2023</b>
+</div>
+</div>
+<div class="row mb-4" style="border-bottom:1px solid #EDEDED">
+<div class="col-md-6 text-left">Дата голосования</div>
+<div class="col-md-6 text-right">
+<b>17.03.2024</b>
+</div>
+</div>
+<div class="row mb-4" style="border-bottom:1px solid #EDEDED">
+<div class="col-md-6 text-left">Голосование в течение нескольких дней подряд</div>
+<div class="col-md-6 text-right">
+<b>с 15.03.2024 по 17.03.2024</b>
+</div>
+</div>
+</div>
+</div><div class="tab-pane fade" id="standard-reports">
+<table cellpadding="7" class="table-borderless" style="width:100%;word-wrap: break-word;word-break: break-word;table-layout: fixed;">
+<thead>
+<tr style="border-bottom:1px solid #EDEDED">
+<th class="tdCategory"><img src="/img/standartReports.png" style="margin-right: 15px"/>СТАНДАРТНЫЕ ОТЧЕТЫ</th>
+</tr>
+</thead>
+<tr class="trReport">
+<td class="tdReport">
+
+
+
+					  <img src="img/trending_flat.png"/>  
+
+					<a href="http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&amp;root=1000075&amp;tvd=27820002162292&amp;vrn=100100339410030&amp;region=78&amp;global=&amp;sub_region=78&amp;prver=0&amp;pronetvd=null&amp;vibid=100100339410030&amp;type=221">Сведения о кандидатах на должность Президента Российской Федерации</a></td>
+</tr>
+<tr class="trReport">
+<td class="tdReport">
+
+					  <img src="img/trending_flat.png"/>  
+
+					<a href="http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&amp;root=1000075&amp;tvd=27820002162292&amp;vrn=100100339410030&amp;region=78&amp;global=&amp;sub_region=78&amp;prver=0&amp;pronetvd=null&amp;vibid=27820002162292&amp;type=469">Информация о числе избирателей, включенных в список избирателей на основании поданных заявлений о включении в список избирателей по месту нахождения</a></td>
+</tr>
+<tr class="trReport">
+<td class="tdReport">
+
+					  <img src="img/trending_flat.png"/>  
+
+					<a href="http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&amp;root=1000075&amp;tvd=27820002162292&amp;vrn=100100339410030&amp;region=78&amp;global=&amp;sub_region=78&amp;prver=0&amp;pronetvd=null&amp;vibid=27820002162292&amp;type=475">Информация о числе избирателей из Реестра избирателей, подлежащих исключению из списка избирателей</a></td>
+</tr>
+</table>
+</div><div class="tab-pane fade" id="election-process">
+<table cellpadding="7" class="table-borderless" style="width:100%">
+<thead>
+<tr style="border-bottom:1px solid #EDEDED">
+<th class="tdCategory"><img src="/img/xodgol.png" style="margin-right: 15px"/>ХОД ГОЛОСОВАНИЯ</th>
+</tr>
+</thead>
+<tr class="trReport">
+<td class="tdReport">
+
+
+
+				  <img src="img/trending_flat.png"/>  
+
+				<a href="http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&amp;root=1000075&amp;tvd=27820002162292&amp;vrn=100100339410030&amp;region=78&amp;global=&amp;sub_region=78&amp;prver=0&amp;pronetvd=null&amp;vibid=27820002162292&amp;type=238">Данные об открытии помещений для голосования в первый день голосования</a></td>
+</tr>
+<tr class="trReport">
+<td class="tdReport">
+
+
+
+					  <img src="img/trending_flat.png"/>  
+
+					<a href="http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&amp;root=1000075&amp;tvd=27820002162292&amp;vrn=100100339410030&amp;region=78&amp;global=&amp;sub_region=78&amp;prver=0&amp;pronetvd=null&amp;vibid=27820002162292&amp;type=654">Информация об общем количестве избирателей, получивших избирательные  бюллетени в первый день голосования</a></td>
+</tr>
+<tr class="trReport">
+<td class="tdReport">
+
+
+
+					  <img src="img/trending_flat.png"/>  
+
+					<a href="http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&amp;root=1000075&amp;tvd=27820002162292&amp;vrn=100100339410030&amp;region=78&amp;global=&amp;sub_region=78&amp;prver=0&amp;pronetvd=null&amp;vibid=27820002162292&amp;type=655">Информация об общем количестве избирателей, получивших избирательные  бюллетени во второй день голосования</a></td>
+</tr>
+<tr class="trReport">
+<td class="tdReport">
+
+
+
+				  <img src="img/trending_flat.png"/>  
+
+				<a href="http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&amp;root=1000075&amp;tvd=27820002162292&amp;vrn=100100339410030&amp;region=78&amp;global=&amp;sub_region=78&amp;prver=0&amp;pronetvd=null&amp;vibid=27820002162292&amp;type=453"> Информация об общем количестве избирателей, получивших избирательные бюллетени в последний день голосования</a></td>
+</tr>
+</table>
+</div><div class="tab-pane fade" id="digital-remote-election-data">
+<table cellpadding="7" class="table-borderless" style="width:100%">
+<thead>
+<tr style="border-bottom:1px solid #EDEDED">
+<th class="tdCategory"><img src="/img/cifrgol.png" style="margin-right: 15px"/>ДАННЫЕ О ДИСТАНЦИОННОМ ЭЛЕКТРОННОМ ГОЛОСОВАНИИ</th>
+</tr>
+</thead>
+<tr class="trReport">
+<td class="tdReport">
+
+
+
+					  <img src="img/trending_flat.png"/>  
+
+					<a href="http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&amp;root=1000075&amp;tvd=27820002162292&amp;vrn=100100339410030&amp;region=78&amp;global=&amp;sub_region=78&amp;prver=0&amp;pronetvd=null&amp;vibid=27820002162292&amp;type=701">Данные об итогах дистанционного электронного голосования</a></td>
+</tr>
+</table>
+</div><div class="tab-pane fade" id="payment-results">
+<table cellpadding="7" class="table-borderless" id="payment-table" style="width:100%">
+<thead>
+<tr style="border-bottom:1px solid #EDEDED">
+<th class="tdCategory"><img src="/img/cifrgol.png" style="margin-right: 15px"/>ФИНАНСОВЫЕ ОТЧЕТЫ</th>
+</tr>
+</thead>
+<tr class="trReport">
+<td class="tdReport">
+
+				  <img src="img/trending_flat.png"/>  
+
+				<a id="finRep" onclick="expndColpsTableRows(1)" role="button" style="cursor: pointer;">Сведения об общей сумме средств, поступивших в избирательные фонды кандидатов и израсходованных из них</a></td>
+</tr>
+<tr class="hideableRow1 hiddenRow">
+<td class="tdReport">
+
+					          <img src="img/trending_flat_line.png"/>  
+
+					<a href="javascript:window.location.assign('http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=finance_download&amp;docid=93489')">Сведения об общей сумме средств, поступивших в избирательные фонды кандидатов и израсходованных из них  26.01.2024   </a></td>
+</tr>
+<tr class="hideableRow1 hiddenRow">
+<td class="tdReport">
+
+					          <img src="img/trending_flat_line.png"/>  
+
+					<a href="javascript:window.location.assign('http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=finance_download&amp;docid=93491')">Сведения об общей сумме средств, поступивших в избирательные фонды кандидатов и израсходованных из них  26.01.2024   </a></td>
+</tr>
+<tr class="hideableRow1 hiddenRow">
+<td class="tdReport">
+
+					          <img src="img/trending_flat_line.png"/>  
+
+					<a href="javascript:window.location.assign('http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=finance_download&amp;docid=93490')">Сведения об общей сумме средств, поступивших в избирательные фонды кандидатов и израсходованных из них  26.01.2024   </a></td>
+</tr>
+<tr class="hideableRow1 hiddenRow">
+<td class="tdReport">
+
+					          <img src="img/trending_flat_line.png"/>  
+
+					<a href="javascript:window.location.assign('http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=finance_download&amp;docid=93488')">Сведения об общей сумме средств, поступивших в избирательные фонды кандидатов и израсходованных из них  26.01.2024   </a></td>
+</tr>
+<tr class="trReport">
+<td class="tdReport">
+
+				  <img src="img/trending_flat.png"/>  
+
+				<a id="finRep" onclick="expndColpsTableRows(4)" role="button" style="cursor: pointer;">Сведения о доходах и имуществе кандидатов</a></td>
+</tr>
+<tr class="hideableRow4 hiddenRow">
+<td class="tdReport">
+
+					          <img src="img/trending_flat_line.png"/>  
+
+					<a href="javascript:window.location.assign('http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=finance_download&amp;docid=93492')">Сведения о доходах и имуществе кандидата   Даванков Владислав Андреевич</a></td>
+</tr>
+<tr class="hideableRow4 hiddenRow">
+<td class="tdReport">
+
+					          <img src="img/trending_flat_line.png"/>  
+
+					<a href="javascript:window.location.assign('http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=finance_download&amp;docid=93494')">Сведения о доходах и имуществе кандидата   Слуцкий Леонид Эдуардович</a></td>
+</tr>
+<tr class="hideableRow4 hiddenRow">
+<td class="tdReport">
+
+					          <img src="img/trending_flat_line.png"/>  
+
+					<a href="javascript:window.location.assign('http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=finance_download&amp;docid=93493')">Сведения о доходах и имуществе кандидата   Харитонов Николай Михайлович</a></td>
+</tr>
+</table>
+</div><div class="tab-pane fade" id="election-results">
+<table cellpadding="7" class="table-borderless" style="width:100%">
+<thead>
+<tr style="border-bottom:1px solid #EDEDED">
+<th class="tdCategory"><img src="/img/vibresults.png" style="margin-right: 15px"/>РЕЗУЛЬТАТЫ ВЫБОРОВ</th>
+</tr>
+</thead>
+<tr class="trReport">
+<td class="tdReport">
+
+
+
+					  <img src="img/trending_flat.png"/>  
+
+					<a href="http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&amp;root=1000075&amp;tvd=27820002162292&amp;vrn=100100339410030&amp;region=78&amp;global=&amp;sub_region=78&amp;prver=0&amp;pronetvd=null&amp;vibid=27820002162292&amp;type=226">Итоги голосования</a></td>
+</tr>
+<tr class="trReport link-to-summery-table">
+<td class="tdReport">
+
+
+
+						  <img src="img/trending_flat.png"/>  
+
+						<a href="http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&amp;root=1000075&amp;tvd=27820002162292&amp;vrn=100100339410030&amp;region=78&amp;global=&amp;sub_region=78&amp;prver=0&amp;pronetvd=null&amp;vibid=27820002162292&amp;type=227">Сводная таблица итогов голосования</a></td>
+</tr>
+</table>
+</div><div class="tab-pane fade" id="vote-results">
+<table cellpadding="7" class="table-borderless" style="width:100%"></table>
+</div>
+<div class="row tab-pane active show">
+<div class="col">
+<div class="row" hidden="true">
+<div class="col" id="rep-name">
+<b>Итоги голосования</b>
+</div>
+<div class="col" id="vib-name">
+<b>Выборы Президента Российской Федерации</b>
+</div>
+</div>
+<table class="table-borderless igbq_iefm" style="opacity: 0; visibility: hidden;">
+<tbody>
+<tr>
+<td>
+
+						Дата голосования:  17.03.2024</td>
+</tr>
+</tbody>
+</table>
+<table class="table-borderless ygkz_ftyo" style="opacity: 0; visibility: hidden;" width="100%">
+<tr>
+<td style="vertical-align:top;" width="30%">
+
+						Наименование избирательной комиссии
+
+					</td>
+<td class="text-center"><b>Территориальная избирательная комиссия №2</b></td>
+</tr>
+</table>
+<table bgcolor="white" border="0" cellpadding="3" cellspacing="1" class="gfqd_xokw" style="opacity: 0; visibility: hidden;" width="100%">
+<tr bgcolor="#FFFFFF">
+<td class="bno_ocp" style="color:black">
+<font style="color:black">Число участковых избирательных комиссий -
+
+	                   		<b><span class="sih_xbw">Э</span><span class="sih_xbw">щ</span></b></font>
+<br/>
+<font style="color:black">Число участковых избирательных комиссий, приступивших к передаче сведений -
+
+	                   		<b><span class="sih_xbw">Э</span><span class="sih_xbw">щ</span></b></font>
+<br/>э</td>
+</tr>
+</table>
+<table class="table-borderless tkar_qabs" style="opacity: 0; visibility: hidden;" width="100%">
+<tr>
+<td class="headers text-right">
+
+							Дата и время подписания протокола 18.03.2024 05:04:00</td>
+</tr>
+</table>
+<div class="table-responsive">
+<table class="table-bordered table-striped table-sm fsmi_xkng" style="width:100%;opacity: 0; visibility: hidden;">
+<tr>
+<td class="bvd_spk">9р</td>
+<td>Число избирателей, включенных в список избирателей</td>
+<td class="text-right fwm_hkm">
+<b><span class="sih_xbw">V</span><span class="sih_xbw">6</span><span class="sih_xbw">P</span><span class="sih_xbw">P</span><span class="sih_xbw">Э</span></b>
+<br/>с</td>
+</tr>
+<tr>
+<td class="fax_pic">
+<span class="sih_xbw">Э</span>а</td>
+<td>Число избирательных бюллетеней, полученных участковой избирательной комиссией</td>
+<td class="text-right jln_xkh">
+<b><span class="sih_xbw">щ</span><span class="sih_xbw">n</span><span class="sih_xbw">g</span><span class="sih_xbw">6</span><span class="sih_xbw">6</span></b>
+<br/>з</td>
+</tr>
+<tr>
+<td class="syi_ysb">
+<span class="sih_xbw">щ</span>р</td>
+<td>Число избирательных бюллетеней, выданных избирателям, проголосовавшим досрочно</td>
+<td class="text-right ekl_bcz">
+<b><span class="sih_xbw">6</span></b>
+<br/>м</td>
+</tr>
+<tr>
+<td class="dgv_iek">а5л.ч9дц%</td>
+<td>Число избирательных бюллетеней, выданных в помещении для голосования в день голосования</td>
+<td class="text-right pnh_zjn">
+<b><span class="sih_xbw">Э</span><span class="sih_xbw">g</span><span class="sih_xbw">Э</span><span class="sih_xbw">g</span><span class="sih_xbw">P</span></b>
+<br/>р</td>
+</tr>
+<tr>
+<td class="kwb_cam">ч5ш</td>
+<td>Число избирательных бюллетеней, выданных вне помещения для голосования в день голосования</td>
+<td class="text-right xbt_nbd">
+<b><span class="sih_xbw">Э</span><span class="sih_xbw">g</span><span class="sih_xbw">6</span><span class="sih_xbw">g</span></b>
+<br/>ы</td>
+</tr>
+<tr>
+<td class="zqe_zxv">
+<span class="sih_xbw">g</span>ж</td>
+<td>Число погашенных избирательных бюллетеней</td>
+<td class="text-right mzh_imx">
+<b><span class="sih_xbw">m</span><span class="sih_xbw">6</span><span class="sih_xbw">Л</span><span class="sih_xbw">Э</span><span class="sih_xbw">n</span></b>
+<br/>е</td>
+</tr>
+<tr>
+<td class="hds_gmi">10ч</td>
+<td>Число избирательных бюллетеней в переносных ящиках для голосования</td>
+<td class="text-right iaz_gbd">
+<b><span class="sih_xbw">Э</span><span class="sih_xbw">g</span><span class="sih_xbw">6</span><span class="sih_xbw">P</span></b>
+<br/>к</td>
+</tr>
+<tr>
+<td class="ips_cdf">е5ь.э4се%</td>
+<td>Число бюллетеней в стационарных ящиках для голосования</td>
+<td class="text-right rki_wqh">
+<b><span class="sih_xbw">Э</span><span class="sih_xbw">g</span><span class="sih_xbw">m</span><span class="sih_xbw">А</span><span class="sih_xbw">6</span></b>
+<br/>з</td>
+</tr>
+<tr>
+<td class="tdr_bov">1ч</td>
+<td>Число недействительных избирательных бюллетеней</td>
+<td class="text-right xyw_wsm">
+<b><span class="sih_xbw">m</span><span class="sih_xbw">Э</span><span class="sih_xbw">щ</span><span class="sih_xbw">P</span></b>
+<br/>п</td>
+</tr>
+<tr>
+<td class="mnp_fnl">7ь</td>
+<td>Число действительных избирательных бюллетеней</td>
+<td class="text-right exn_exm">
+<b><span class="sih_xbw">Э</span><span class="sih_xbw">Л</span><span class="sih_xbw">P</span><span class="sih_xbw">P</span><span class="sih_xbw">6</span></b>
+<br/>р</td>
+</tr>
+<tr>
+<td class="xyo_let">12н</td>
+<td>Число утраченных избирательных бюллетеней</td>
+<td class="text-right ghb_rbp">
+<b><span class="sih_xbw">6</span></b>
+<br/>ь</td>
+</tr>
+<tr>
+<td class="fhm_zbq">11п</td>
+<td>Число избирательных бюллетеней, не учтенных при получении</td>
+<td class="text-right cix_nlr">
+<b><span class="sih_xbw">6</span></b>
+<br/>н</td>
+</tr>
+<tr>
+<td></td>
+<td colspan="2"><nobr><b> </b></nobr></td>
+</tr>
+<tr>
+<td class="azy_qyf">
+<span class="sih_xbw">m</span><span class="sih_xbw">щ</span>о</td>
+<td>Даванков Владислав Андреевич</td>
+<td class="text-right kid_yht">
+<b><span class="sih_xbw">щ</span><span class="sih_xbw">А</span><span class="sih_xbw">щ</span><span class="sih_xbw">Э</span></b>
+<br/><span class="sih_xbw">m</span><span class="sih_xbw">щ</span>.<span class="sih_xbw">щ</span><span class="sih_xbw">m</span>%л</td>
+</tr>
+<tr>
+<td class="qvr_qcf">
+<span class="sih_xbw">m</span><span class="sih_xbw">V</span>о</td>
+<td>Путин Владимир Владимирович</td>
+<td class="text-right cse_dcf">
+<b><span class="sih_xbw">Э</span><span class="sih_xbw">m</span><span class="sih_xbw">А</span><span class="sih_xbw">6</span><span class="sih_xbw">m</span></b>
+<br/><span class="sih_xbw">Л</span><span class="sih_xbw">P</span>.<span class="sih_xbw">Л</span><span class="sih_xbw">V</span>%к</td>
+</tr>
+<tr>
+<td class="ozg_rps">а12.м59ч%</td>
+<td>Слуцкий Леонид Эдуардович</td>
+<td class="text-right baq_kjh">
+<b><span class="sih_xbw">Л</span><span class="sih_xbw">V</span><span class="sih_xbw">n</span></b>
+<br/><span class="sih_xbw">Э</span>.<span class="sih_xbw">g</span><span class="sih_xbw">6</span>%д</td>
+</tr>
+<tr>
+<td class="xgh_vyl">
+<span class="sih_xbw">m</span><span class="sih_xbw">g</span>ъ</td>
+<td>Харитонов Николай Михайлович</td>
+<td class="text-right cjl_mkg">
+<b><span class="sih_xbw">m</span><span class="sih_xbw">m</span><span class="sih_xbw">g</span><span class="sih_xbw">А</span></b>
+<br/><span class="sih_xbw">V</span>.<span class="sih_xbw">6</span><span class="sih_xbw">g</span>%б</td>
+</tr>
+</table>
+</div>
+<table class="table-borderless link-to-summery-table rbci_ahlw" style="opacity: 0; visibility: hidden;" width="100%">
+<tr class="w2">
+<td class="headers text-right"><b><a href="http://www.st-petersburg.vybory.izbirkom.ru/region/region/st-petersburg?action=show&amp;root=1000075&amp;tvd=27820002162292&amp;vrn=100100339410030&amp;region=78&amp;global=null&amp;sub_region=78&amp;prver=0&amp;pronetvd=null&amp;cuiknum=null&amp;type=227">Перейти к сводной таблице итогов голосования</a></b></td>
+</tr>
+</table>
+<style type="text/css">@font-face{ font-family: "djm_blk"; font-weight: 400; font-style: normal; src: url("./fonts1/4dfb3cd1-ab49-40d1-9daa-305e562de4e7.otf"); src: url("./fonts1/4dfb3cd1-ab49-40d1-9daa-305e562de4e7.eot?#iefix") format("embedded-opentype"), url("./fonts1/4dfb3cd1-ab49-40d1-9daa-305e562de4e7.woff2") format("woff2"), url("./fonts1/4dfb3cd1-ab49-40d1-9daa-305e562de4e7.woff") format("woff"), url("./fonts1/4dfb3cd1-ab49-40d1-9daa-305e562de4e7.ttf") format("truetype"), } .gfqd_xokw .sih_xbw{ font-family: "djm_blk"!important;} .fsmi_xkng .sih_xbw{ font-family: "djm_blk"!important;} </style><script type="text/javascript"> var pce_cko = function(ak_td,et_de,cq_qt){ var miy_hce = cq_qt.getElementsByClassName(ak_td); for (var i = 0; i < miy_hce.length; i++) { var v = miy_hce[i].innerHTML.split(''); v.splice(et_de, 1); miy_hce[i].innerHTML = v.join(''); }; } ; var lgd_pbj = function(ez_ox,sh_jr,md_dz){ var hko_mkn = md_dz.getElementsByTagName('td'); var fw_nv = lec(hko_mkn[ez_ox]); var bg_qw = lec(hko_mkn[sh_jr]); var ob_gh = fw_nv.innerHTML; var dn_ic = bg_qw.innerHTML; fw_nv.innerHTML = dn_ic; bg_qw.innerHTML = ob_gh; }; if(!lec) { var lec = function(a) { var b = a.lastElementChild; if(!b) return a; if(b.lastElementChild) return lec(b); return b; }; }; ; var hsk_vca = function(rv_kl,sj_hn,ls_la){ var swa_ftp = ls_la.getElementsByClassName(rv_kl); for (var i = 0; i < swa_ftp.length; i++) { swa_ftp[i].innerHTML = sj_hn; }; } ; var a = function(){ var igbq_iefm = document.getElementsByClassName('igbq_iefm')[0]; igbq_iefm.style.position = 'relative'; setTimeout(function (){ igbq_iefm.style.removeProperty('opacity'); igbq_iefm.style.removeProperty('visibility'); }, 700); var ygkz_ftyo = document.getElementsByClassName('ygkz_ftyo')[0]; ygkz_ftyo.style.position = 'relative'; setTimeout(function (){ ygkz_ftyo.style.removeProperty('opacity'); ygkz_ftyo.style.removeProperty('visibility'); }, 700); var gfqd_xokw = document.getElementsByClassName('gfqd_xokw')[0]; gfqd_xokw.style.position = 'relative'; setTimeout(function (){ gfqd_xokw.style.removeProperty('opacity'); gfqd_xokw.style.removeProperty('visibility'); }, 700); pce_cko('bno_ocp', -1, gfqd_xokw) ; var tkar_qabs = document.getElementsByClassName('tkar_qabs')[0]; tkar_qabs.style.position = 'relative'; setTimeout(function (){ tkar_qabs.style.removeProperty('opacity'); tkar_qabs.style.removeProperty('visibility'); }, 700); var fsmi_xkng = document.getElementsByClassName('fsmi_xkng')[0]; fsmi_xkng.style.position = 'relative'; setTimeout(function (){ fsmi_xkng.style.removeProperty('opacity'); fsmi_xkng.style.removeProperty('visibility'); }, 700); pce_cko('bvd_spk', -1, fsmi_xkng) ; pce_cko('tdr_bov', -1, fsmi_xkng) ; lgd_pbj('0', '24', fsmi_xkng) ; pce_cko('fwm_hkm', -1, fsmi_xkng) ; pce_cko('fax_pic', -1, fsmi_xkng) ; pce_cko('jln_xkh', -1, fsmi_xkng) ; pce_cko('syi_ysb', -1, fsmi_xkng) ; pce_cko('ekl_bcz', -1, fsmi_xkng) ; hsk_vca('dgv_iek', '4', fsmi_xkng) ; pce_cko('pnh_zjn', -1, fsmi_xkng) ; pce_cko('kwb_cam', -1, fsmi_xkng) ; pce_cko('kwb_cam', 0, fsmi_xkng) ; pce_cko('xbt_nbd', -1, fsmi_xkng) ; pce_cko('zqe_zxv', -1, fsmi_xkng) ; pce_cko('mzh_imx', -1, fsmi_xkng) ; pce_cko('hds_gmi', -1, fsmi_xkng) ; pce_cko('mnp_fnl', -1, fsmi_xkng) ; lgd_pbj('18', '27', fsmi_xkng) ; pce_cko('iaz_gbd', -1, fsmi_xkng) ; hsk_vca('ips_cdf', '8', fsmi_xkng) ; pce_cko('rki_wqh', -1, fsmi_xkng) ; pce_cko('xyw_wsm', -1, fsmi_xkng) ; pce_cko('exn_exm', -1, fsmi_xkng) ; pce_cko('xyo_let', -1, fsmi_xkng) ; pce_cko('fhm_zbq', -1, fsmi_xkng) ; lgd_pbj('30', '33', fsmi_xkng) ; pce_cko('ghb_rbp', -1, fsmi_xkng) ; pce_cko('cix_nlr', -1, fsmi_xkng) ; pce_cko('azy_qyf', -1, fsmi_xkng) ; pce_cko('kid_yht', -1, fsmi_xkng) ; pce_cko('qvr_qcf', -1, fsmi_xkng) ; pce_cko('cse_dcf', -1, fsmi_xkng) ; hsk_vca('ozg_rps', '15', fsmi_xkng) ; pce_cko('baq_kjh', -1, fsmi_xkng) ; pce_cko('xgh_vyl', -1, fsmi_xkng) ; pce_cko('cjl_mkg', -1, fsmi_xkng) ; var rbci_ahlw = document.getElementsByClassName('rbci_ahlw')[0]; rbci_ahlw.style.position = 'relative'; setTimeout(function (){ rbci_ahlw.style.removeProperty('opacity'); rbci_ahlw.style.removeProperty('visibility'); }, 700); }; document.addEventListener('DOMContentLoaded', a); </script>
+</div>
+</div>
+</div>
+</div>
+<div>
+<br>
+<script type="text/javascript">
+
+    (function(d, t, p) {
+
+        var j = d.createElement(t); j.async = true; j.type = "text/javascript";
+
+        j.src = ("https:" == p ? "https:" : "http:") + "//stat.sputnik.ru/cnt.js";
+
+        var s = d.getElementsByTagName(t)[0]; s.parentNode.insertBefore(j, s);
+
+    })(document, "script", document.location.protocol);
+
+</script>
+<!--</div>-->
+</br></div>
+</div></div></main>
+<!-- page-content" -->
+</div>
+<script type="text/javascript">
+
+
+
+    $(document).ready(function () {
+
+        $("#election-info-name-mobile,#standard-reports-name-mobile,#election-process-name-mobile,#digital-election-sites-name-mobile,#digital-election-vote-name-mobile,#digital-remote-election-data-name-mobile,#information-about-candidates-name-mobile,#payment-results-name-mobile,#election-results-name-mobile,#vote-results-name-mobile,#report-body-link-mobile").on('click', function () {
+
+            $("#mobile__menu__nav").hide();
+
+        })
+
+
+
+        $(".mobile-menu-button").on('click', function () {
+
+            $("#mobile__menu__nav").show();
+
+            // if ($("#election-info-name-mobile").text() != '') {
+
+            // 	$("#mobile__menu__nav").css('height','100%');
+
+            // } else $("#mobile__menu__nav").css('min-height','100%');
+
+        })
+
+
+
+        $(".close-mobile-menu").on('click', function () {
+
+            $("#mobile__menu__nav").hide();
+
+        })
+
+
+
+        $(".loader-template").hide();
+
+        $('html, body').css({overflow: 'auto', height: 'auto'});
+
+
+
+        $('.tree-li').on('click', 'a', function () {
+
+            if ($(this).hasClass('tree-open') || $(this).hasClass('tree-close')) {
+
+                return;
+
+            }
+
+            $(".loader-template").show();
+
+            $('html, body').css({overflow: 'hidden', height: '100%'});
+
+        })
+
+
+
+
+
+        $(".tdReport a,.viboryLink,.searchCandByParty,.list-link,#calendar-btn-search,.breadcrumb a,#calendar-btn,.pagination-new a,.calYears,.calMonths,.oldDay,.newDay").on('click', function (e) {
+
+
+
+            if ($(this).parent().attr('class') == 'tree-li' && $("#back-to-list-btn").length != 0) {
+
+                e.preventDefault();
+
+                window.location = localStorage.getItem("back-to-list-link");
+
+            } else if ($(this).attr('id') == 'calendar-btn-search') {
+
+                sessionStorage.setItem("isNewSession", "false")
+
+                $(".loader-template").show();
+
+                $('html, body').css({overflow: 'hidden', height: '100%'});
+
+            } else if ($(this).attr('class') == 'calYears' || $(this).attr('class') == 'calMonths' || $(this).attr('class') == 'oldDay' || $(this).attr('class') == 'newDay') {
+
+                $(".loader-template").show();
+
+                $('html, body').css({overflow: 'hidden', height: '100%'});
+
+            } else if ($(this).attr('id') == 'finRep' || $(this).attr('href').match('javascript')) {
+
+                return;
+
+            } else {
+
+                $(".loader-template").show();
+
+                $('html, body').css({overflow: 'hidden', height: '100%'});
+
+            }
+
+        })
+
+    })
+
+
+
+    
+
+
+
+    
+
+
+
+
+
+    //$('.breadcrumb').insertAfter($('#election-title'));
+
+    $('.breadcrumb').prependTo($('.rep-container'));
+
+    $('#election-title').prependTo($('.rep-container'));
+
+
+
+
+
+    $(window).resize(function () {
+
+        if ($(this).width() <= 768) {
+
+            hideSidebar();
+
+        }
+
+    });
+
+
+
+    $(document).ready(function () {
+
+        let title = $("#vib-name").text();
+
+        $(".report-title").text(title);
+
+    });
+
+
+
+    $(document).ready(function () {
+
+        let link = localStorage.getItem("filtered-list");
+
+        $("#go-to-elections-list").attr("href", link);
+
+    });
+
+
+
+    $(document).ready(function () {
+
+        $(".list-link").on("click", function () {
+
+            localStorage.setItem("back-to-list-link", window.location.href);
+
+        });
+
+    });
+
+
+
+    // $(document).ready(function () {
+
+    // 	let link = sessionStorage.getItem("back-to-list-link");
+
+    // 	$("#back-to-list-btn").attr("href", link);
+
+    // });
+
+
+
+    $(document).ready(function () {
+
+        let name = $("#election-info-name-gen").text().trim();
+
+        if (name === "") {
+
+            $("#election-info-name,#election-info-name-mobile").hide();
+
+        } else {
+
+            $("#election-info-name,#election-info-name-mobile").text(name);
+
+        }
+
+    });
+
+
+
+    $(document).ready(function () {
+
+        let name = $("#standard-reports > table > thead > tr > th").text().trim();
+
+        if (name === "") {
+
+            $("#standard-reports-name,#standard-reports-name-mobile").hide();
+
+
+
+        } else {
+
+            $("#standard-reports-name,#standard-reports-name-mobile").text(name.charAt(0).toUpperCase() + name.substr(1).toLowerCase());
+
+        }
+
+    });
+
+
+
+    $(document).ready(function () {
+
+        let name = $("#election-process > table > thead > tr > th").text().trim();
+
+        if (name === "") {
+
+            $("#election-process-name,#election-process-name-mobile").hide();
+
+
+
+        } else {
+
+            $("#election-process-name,#election-process-name-mobile").text(name.charAt(0).toUpperCase() + name.substr(1).toLowerCase());
+
+        }
+
+    });
+
+
+
+    $(document).ready(function () {
+
+        let name = $("#digital-election-sites > table > thead > tr > th").text().trim();
+
+        if (name === "") {
+
+            $("#digital-election-sites-name,#digital-election-sites-name-mobile").hide();
+
+        } else {
+
+            $("#digital-election-sites-name,#digital-election-sites-name-mobile").text(name.charAt(0).toUpperCase() + name.substr(1).toLowerCase());
+
+        }
+
+    });
+
+
+
+    $(document).ready(function () {
+
+        let name = $("#digital-election-vote > table > thead > tr > th").text().trim();
+
+        if (name === "") {
+
+            $("#digital-election-vote-name,#digital-election-vote-name-mobile").hide();
+
+        } else {
+
+            $("#digital-election-vote-name,#digital-election-vote-name-mobile").text(name.charAt(0).toUpperCase() + name.substr(1).toLowerCase());
+
+        }
+
+    });
+
+
+
+    $(document).ready(function () {
+
+        let name = $("#digital-remote-election-data > table > thead > tr > th").text().trim();
+
+        if (name === "") {
+
+            $("#digital-remote-election-data-name,#digital-remote-election-data-name-mobile").hide();
+
+        } else {
+
+            $("#digital-remote-election-data-name,#digital-remote-election-data-name-mobile").text(name.charAt(0).toUpperCase() +
+
+                name.substr(1).toLowerCase());
+
+        }
+
+    });
+
+
+
+    $(document).ready(function () {
+
+        let name = $("#information-about-candidates > table > thead > tr > th").text().trim();
+
+        if (name === "") {
+
+            $("#information-about-candidates-name,#information-about-candidates-name-mobile").hide();
+
+        } else {
+
+            $("#information-about-candidates-name,#information-about-candidates-name-mobile").text(name.charAt(0).toUpperCase() + name.substr(1).toLowerCase());
+
+        }
+
+    });
+
+
+
+    $(document).ready(function () {
+
+        let name = $("#payment-results").text().trim();
+
+        let newLineIndex = name.indexOf('\n');
+
+        name = name.substring(0, newLineIndex);
+
+        if (name === "") {
+
+            $("#payment-results-name,#payment-results-name-mobile").hide();
+
+        } else {
+
+            $("#payment-results-name,#payment-results-name-mobile").text(name.charAt(0).toUpperCase() + name.substr(1).toLowerCase());
+
+        }
+
+
+
+    });
+
+
+
+    $(document).ready(function () {
+
+        let name = $("#election-results > table > thead > tr > th").text().trim();
+
+        if (name === "") {
+
+            $("#election-results-name,#election-results-name-mobile").hide();
+
+        } else {
+
+            $("#election-results-name,#election-results-name-mobile").text(name.charAt(0).toUpperCase() + name.substr(1).toLowerCase());
+
+        }
+
+    });
+
+
+
+    $(document).ready(function () {
+
+        let name = $("#vote-results > table > thead > tr > th").text().trim();
+
+        if (name === "") {
+
+            $("#vote-results-name,#vote-results-name-mobile").hide();
+
+        } else {
+
+            $("#vote-results-name,#vote-results-name-mobile").text(name.charAt(0).toUpperCase() +
+
+                name.substr(1).toLowerCase());
+
+        }
+
+    });
+
+
+
+    $(document).ready(function () {
+
+        if ($(".calendar_title").text() === "Календарь выборов") {
+
+            $("#election-nav,#election-nav-mobile").hide();
+
+        } else {
+
+            $("#election-nav,#election-nav-mobile").show();
+
+        }
+
+    });
+
+
+
+    $(document).ready(function () {
+
+        if ($(".calendar_title").text() !== "Календарь выборов") {
+
+            $("#election-nav-items,#election-nav-items-mobile").children().each(function () {
+
+                let text = $(this).text();
+
+                if (text === "") {
+
+                    $(this).hide();
+
+                }
+
+            });
+
+        }
+
+    });
+
+
+
+    $(document).ready(function () {
+
+        $(".nav-link").on('click', function () {
+
+            $(".nav-link").removeClass("active").removeClass("show");
+
+        });
+
+    });
+
+
+
+    function expndColpsTableRows(rowId) {
+
+        let selector = "#payment-table .hideableRow" + rowId;
+
+        $(selector).toggleClass('hiddenRow');
+
+    }
+
+
+
+    function setRedirectFlag() {
+
+        localStorage.setItem("doOnce", "true");
+
+        localStorage.setItem("redirectFromElection", "true");
+
+    }
+
+
+
+    $(document).ready(function () {
+
+        var doOnce = localStorage.getItem("doOnce");
+
+        var redirect = localStorage.getItem("redirectFromElection");
+
+        if (redirect === "true" && doOnce === "true") {
+
+            localStorage.setItem("doOnce", "false");
+
+            $('#search_form').submit();
+
+        }
+
+    });
+
+
+
+    $(document).ready(function () {
+
+        $("#find-all").on('click', function () {
+
+            window.location.href = window.location.href;
+
+        });
+
+    });
+
+
+
+
+
+    // flex pagination
+
+    // $(document).ready(function () {
+
+    // 	$(".pagination").rPage();
+
+    // });
+
+
+
+    $(document).on("click", "#back-to-list-btn, #back-to-candidates-btn", function () {
+
+        window.history.go(-1);
+
+    })
+
+
+
+    $(document).on("click mousedown middleclick", "#220-rep-dir-link", function () {
+
+        localStorage.setItem("link-from-list", "false");
+
+        localStorage.setItem("back-to-candidates-show", "false");
+
+    })
+
+
+
+    $(document).on("click mousedown middleclick", ".list-link", function () {
+
+        localStorage.setItem("link-from-list", "true");
+
+        localStorage.setItem("back-to-candidates-show", "false");
+
+    })
+
+
+
+    $(document).on("click mousedown middleclick", "#party-list-link", function () {
+
+        localStorage.setItem("back-to-candidates-show", "true");
+
+    })
+
+
+
+
+
+    $(document).ready(function () {
+
+        var directLink = localStorage.getItem("link-from-list")
+
+        if (directLink == "false") {
+
+            $("#back-to-list-btn").hide();
+
+        } else if (directLink == "true") {
+
+            $("#back-to-list-btn").show();
+
+        }
+
+    })
+
+
+
+    $(document).ready(function () {
+
+        var boolean = localStorage.getItem("back-to-candidates-show")
+
+        if (boolean == "false") {
+
+            $("#back-to-candidates-btn").hide();
+
+        } else if (boolean == "true") {
+
+            $("#back-to-candidates-btn").show();
+
+        }
+
+    })
+
+
+
+    $(document).on('click', '#calendar-table .btn-block', function () {
+
+        var startDate = $(this).attr('onclick').substring(15, 25);
+
+        var endDate = $(this).attr('onclick').substring(29, 39);
+
+        localStorage.setItem("start_date", startDate);
+
+        localStorage.setItem("end_date", endDate);
+
+        $("#urovproved, #vidvibref, #vibtype, #actual_regions_subjcode, #old_regions_subjcode, #sxemavib")
+
+            .multiselect('deselectAll', false);
+
+        localStorage.setItem("urovproved", "");
+
+        localStorage.setItem("vidvibref", "");
+
+        localStorage.setItem("vibtype", "");
+
+        localStorage.setItem("actual_regions_subjcode", "");
+
+        localStorage.setItem("old_regions_subjcode", "");
+
+        localStorage.setItem("sxemavib", "");
+
+        $("#start_date").val(startDate);
+
+        $("#end_date").val(endDate);
+
+        $("#search_form").submit();
+
+    })
+
+
+
+    $(document).on('click', '#calendar-btn', function () {
+
+        localStorage.setItem("start_date", getStartDate());
+
+        localStorage.setItem("end_date", getEndDate());
+
+        $("#urovproved, #vidvibref, #vibtype, #actual_regions_subjcode, #old_regions_subjcode, #sxemavib")
+
+            .multiselect('deselectAll', false);
+
+        localStorage.setItem("urovproved", "");
+
+        localStorage.setItem("vidvibref", "");
+
+        localStorage.setItem("vibtype", "");
+
+        localStorage.setItem("actual_regions_subjcode", "");
+
+        localStorage.setItem("old_regions_subjcode", "");
+
+        localStorage.setItem("sxemavib", "");
+
+    })
+
+
+
+    function getStartDate() {
+
+        let dateTime = luxon.DateTime;
+
+        return dateTime.local().minus({months: 1}).startOf('month').toFormat("dd.MM.yyyy");
+
+    }
+
+
+
+    function getEndDate() {
+
+        let dateTime = luxon.DateTime;
+
+        return dateTime.local().plus({months: 4}).endOf('month').toFormat("dd.MM.yyyy");
+
+    }
+
+
+
+    var vrnvibref = "100100339410030"
+
+    var tvd = "27820002162292"
+
+    var region = "78"
+
+    var root = "1000075"
+
+    var global = "null"
+
+    var vid = "226"
+
+    var report_id = "null"
+
+    var sub_region = "78"
+
+    var viewtype = "0"
+
+    var prver = "0"
+
+    var pronetvd = "null"
+
+    var report_mode = "null"
+
+    var tvdTreeJson = "";
+
+
+
+
+
+    
+
+
+
+        
+
+        tvdTreeJson = {"id":100100339410034,"text":"ЦИК России","href":"region/izbirkom?action=show&root=0&tvd=100100339410034&vrn=100100339410030&prver=0&pronetvd=null&region=0&sub_region=0","prver":"0","isUik":false,"selected":false,"load_on_demand":false,"children":[{"id":100100339410035,"text":"Республика Адыгея (Адыгея)","href":"region/izbirkom?action=show&root=1&tvd=100100339410035&vrn=100100339410030&prver=0&pronetvd=null&region=1&sub_region=1","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339410036,"text":"Республика Алтай","href":"region/izbirkom?action=show&root=1&tvd=100100339410036&vrn=100100339410030&prver=0&pronetvd=null&region=2&sub_region=2","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339410037,"text":"Республика Башкортостан","href":"region/izbirkom?action=show&root=1&tvd=100100339410037&vrn=100100339410030&prver=0&pronetvd=null&region=3&sub_region=3","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411198,"text":"Республика Бурятия","href":"region/izbirkom?action=show&root=1&tvd=100100339411198&vrn=100100339410030&prver=0&pronetvd=null&region=4&sub_region=4","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411199,"text":"Республика Дагестан","href":"region/izbirkom?action=show&root=1&tvd=100100339411199&vrn=100100339410030&prver=0&pronetvd=null&region=5&sub_region=5","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411280,"text":"Донецкая Народная Республика","href":"region/izbirkom?action=show&root=1&tvd=100100339411280&vrn=100100339410030&prver=0&pronetvd=null&region=95&sub_region=95","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411200,"text":"Республика Ингушетия","href":"region/izbirkom?action=show&root=1&tvd=100100339411200&vrn=100100339410030&prver=0&pronetvd=null&region=6&sub_region=6","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411201,"text":"Кабардино-Балкарская Республика","href":"region/izbirkom?action=show&root=1&tvd=100100339411201&vrn=100100339410030&prver=0&pronetvd=null&region=7&sub_region=7","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411202,"text":"Республика Калмыкия","href":"region/izbirkom?action=show&root=1&tvd=100100339411202&vrn=100100339410030&prver=0&pronetvd=null&region=8&sub_region=8","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411203,"text":"Карачаево-Черкесская Республика","href":"region/izbirkom?action=show&root=1&tvd=100100339411203&vrn=100100339410030&prver=0&pronetvd=null&region=9&sub_region=9","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411204,"text":"Республика Карелия","href":"region/izbirkom?action=show&root=1&tvd=100100339411204&vrn=100100339410030&prver=0&pronetvd=null&region=10&sub_region=10","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411205,"text":"Республика Коми","href":"region/izbirkom?action=show&root=1&tvd=100100339411205&vrn=100100339410030&prver=0&pronetvd=null&region=11&sub_region=11","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411278,"text":"Республика Крым","href":"region/izbirkom?action=show&root=1&tvd=100100339411278&vrn=100100339410030&prver=0&pronetvd=null&region=93&sub_region=93","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411281,"text":"Луганская Народная Республика","href":"region/izbirkom?action=show&root=1&tvd=100100339411281&vrn=100100339410030&prver=0&pronetvd=null&region=96&sub_region=96","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411206,"text":"Республика Марий Эл","href":"region/izbirkom?action=show&root=1&tvd=100100339411206&vrn=100100339410030&prver=0&pronetvd=null&region=12&sub_region=12","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411207,"text":"Республика Мордовия","href":"region/izbirkom?action=show&root=1&tvd=100100339411207&vrn=100100339410030&prver=0&pronetvd=null&region=13&sub_region=13","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411208,"text":"Республика Саха (Якутия)","href":"region/izbirkom?action=show&root=1&tvd=100100339411208&vrn=100100339410030&prver=0&pronetvd=null&region=14&sub_region=14","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411209,"text":"Республика Северная Осетия - Алания","href":"region/izbirkom?action=show&root=1&tvd=100100339411209&vrn=100100339410030&prver=0&pronetvd=null&region=15&sub_region=15","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411210,"text":"Республика Татарстан (Татарстан)","href":"region/izbirkom?action=show&root=1&tvd=100100339411210&vrn=100100339410030&prver=0&pronetvd=null&region=16&sub_region=16","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411211,"text":"Республика Тыва","href":"region/izbirkom?action=show&root=1&tvd=100100339411211&vrn=100100339410030&prver=0&pronetvd=null&region=17&sub_region=17","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411212,"text":"Удмуртская Республика","href":"region/izbirkom?action=show&root=1&tvd=100100339411212&vrn=100100339410030&prver=0&pronetvd=null&region=18&sub_region=18","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411213,"text":"Республика Хакасия","href":"region/izbirkom?action=show&root=1&tvd=100100339411213&vrn=100100339410030&prver=0&pronetvd=null&region=19&sub_region=19","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411214,"text":"Чеченская Республика","href":"region/izbirkom?action=show&root=1&tvd=100100339411214&vrn=100100339410030&prver=0&pronetvd=null&region=20&sub_region=20","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411215,"text":"Чувашская Республика - Чувашия","href":"region/izbirkom?action=show&root=1&tvd=100100339411215&vrn=100100339410030&prver=0&pronetvd=null&region=21&sub_region=21","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411216,"text":"Алтайский край","href":"region/izbirkom?action=show&root=1&tvd=100100339411216&vrn=100100339410030&prver=0&pronetvd=null&region=22&sub_region=22","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411277,"text":"Забайкальский край","href":"region/izbirkom?action=show&root=1&tvd=100100339411277&vrn=100100339410030&prver=0&pronetvd=null&region=92&sub_region=92","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411276,"text":"Камчатский край","href":"region/izbirkom?action=show&root=1&tvd=100100339411276&vrn=100100339410030&prver=0&pronetvd=null&region=91&sub_region=91","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411217,"text":"Краснодарский край","href":"region/izbirkom?action=show&root=1&tvd=100100339411217&vrn=100100339410030&prver=0&pronetvd=null&region=23&sub_region=23","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411218,"text":"Красноярский край","href":"region/izbirkom?action=show&root=1&tvd=100100339411218&vrn=100100339410030&prver=0&pronetvd=null&region=24&sub_region=24","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411275,"text":"Пермский край","href":"region/izbirkom?action=show&root=1&tvd=100100339411275&vrn=100100339410030&prver=0&pronetvd=null&region=90&sub_region=90","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411219,"text":"Приморский край","href":"region/izbirkom?action=show&root=1&tvd=100100339411219&vrn=100100339410030&prver=0&pronetvd=null&region=25&sub_region=25","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411220,"text":"Ставропольский край","href":"region/izbirkom?action=show&root=1&tvd=100100339411220&vrn=100100339410030&prver=0&pronetvd=null&region=26&sub_region=26","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411221,"text":"Хабаровский край","href":"region/izbirkom?action=show&root=1&tvd=100100339411221&vrn=100100339410030&prver=0&pronetvd=null&region=27&sub_region=27","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411222,"text":"Амурская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411222&vrn=100100339410030&prver=0&pronetvd=null&region=28&sub_region=28","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411223,"text":"Архангельская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411223&vrn=100100339410030&prver=0&pronetvd=null&region=29&sub_region=29","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411224,"text":"Астраханская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411224&vrn=100100339410030&prver=0&pronetvd=null&region=30&sub_region=30","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411225,"text":"Белгородская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411225&vrn=100100339410030&prver=0&pronetvd=null&region=31&sub_region=31","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411226,"text":"Брянская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411226&vrn=100100339410030&prver=0&pronetvd=null&region=32&sub_region=32","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411227,"text":"Владимирская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411227&vrn=100100339410030&prver=0&pronetvd=null&region=33&sub_region=33","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411228,"text":"Волгоградская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411228&vrn=100100339410030&prver=0&pronetvd=null&region=34&sub_region=34","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411229,"text":"Вологодская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411229&vrn=100100339410030&prver=0&pronetvd=null&region=35&sub_region=35","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411230,"text":"Воронежская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411230&vrn=100100339410030&prver=0&pronetvd=null&region=36&sub_region=36","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411282,"text":"Запорожская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411282&vrn=100100339410030&prver=0&pronetvd=null&region=97&sub_region=97","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411231,"text":"Ивановская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411231&vrn=100100339410030&prver=0&pronetvd=null&region=37&sub_region=37","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411232,"text":"Иркутская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411232&vrn=100100339410030&prver=0&pronetvd=null&region=38&sub_region=38","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411233,"text":"Калининградская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411233&vrn=100100339410030&prver=0&pronetvd=null&region=39&sub_region=39","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411234,"text":"Калужская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411234&vrn=100100339410030&prver=0&pronetvd=null&region=40&sub_region=40","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411235,"text":"Кемеровская область - Кузбасс","href":"region/izbirkom?action=show&root=1&tvd=100100339411235&vrn=100100339410030&prver=0&pronetvd=null&region=42&sub_region=42","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411236,"text":"Кировская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411236&vrn=100100339410030&prver=0&pronetvd=null&region=43&sub_region=43","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411237,"text":"Костромская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411237&vrn=100100339410030&prver=0&pronetvd=null&region=44&sub_region=44","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411238,"text":"Курганская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411238&vrn=100100339410030&prver=0&pronetvd=null&region=45&sub_region=45","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411239,"text":"Курская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411239&vrn=100100339410030&prver=0&pronetvd=null&region=46&sub_region=46","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411240,"text":"Ленинградская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411240&vrn=100100339410030&prver=0&pronetvd=null&region=47&sub_region=47","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411241,"text":"Липецкая область","href":"region/izbirkom?action=show&root=1&tvd=100100339411241&vrn=100100339410030&prver=0&pronetvd=null&region=48&sub_region=48","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411242,"text":"Магаданская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411242&vrn=100100339410030&prver=0&pronetvd=null&region=49&sub_region=49","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411243,"text":"Московская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411243&vrn=100100339410030&prver=0&pronetvd=null&region=50&sub_region=50","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411244,"text":"Мурманская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411244&vrn=100100339410030&prver=0&pronetvd=null&region=51&sub_region=51","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411245,"text":"Нижегородская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411245&vrn=100100339410030&prver=0&pronetvd=null&region=52&sub_region=52","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411246,"text":"Новгородская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411246&vrn=100100339410030&prver=0&pronetvd=null&region=53&sub_region=53","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411247,"text":"Новосибирская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411247&vrn=100100339410030&prver=0&pronetvd=null&region=54&sub_region=54","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411248,"text":"Омская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411248&vrn=100100339410030&prver=0&pronetvd=null&region=55&sub_region=55","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411249,"text":"Оренбургская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411249&vrn=100100339410030&prver=0&pronetvd=null&region=56&sub_region=56","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411250,"text":"Орловская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411250&vrn=100100339410030&prver=0&pronetvd=null&region=57&sub_region=57","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411251,"text":"Пензенская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411251&vrn=100100339410030&prver=0&pronetvd=null&region=58&sub_region=58","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411252,"text":"Псковская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411252&vrn=100100339410030&prver=0&pronetvd=null&region=60&sub_region=60","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411253,"text":"Ростовская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411253&vrn=100100339410030&prver=0&pronetvd=null&region=61&sub_region=61","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411254,"text":"Рязанская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411254&vrn=100100339410030&prver=0&pronetvd=null&region=62&sub_region=62","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411255,"text":"Самарская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411255&vrn=100100339410030&prver=0&pronetvd=null&region=63&sub_region=63","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411256,"text":"Саратовская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411256&vrn=100100339410030&prver=0&pronetvd=null&region=64&sub_region=64","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411257,"text":"Сахалинская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411257&vrn=100100339410030&prver=0&pronetvd=null&region=65&sub_region=65","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411258,"text":"Свердловская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411258&vrn=100100339410030&prver=0&pronetvd=null&region=66&sub_region=66","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411259,"text":"Смоленская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411259&vrn=100100339410030&prver=0&pronetvd=null&region=67&sub_region=67","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411260,"text":"Тамбовская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411260&vrn=100100339410030&prver=0&pronetvd=null&region=68&sub_region=68","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411261,"text":"Тверская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411261&vrn=100100339410030&prver=0&pronetvd=null&region=69&sub_region=69","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411262,"text":"Томская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411262&vrn=100100339410030&prver=0&pronetvd=null&region=70&sub_region=70","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411263,"text":"Тульская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411263&vrn=100100339410030&prver=0&pronetvd=null&region=71&sub_region=71","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411264,"text":"Тюменская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411264&vrn=100100339410030&prver=0&pronetvd=null&region=72&sub_region=72","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411265,"text":"Ульяновская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411265&vrn=100100339410030&prver=0&pronetvd=null&region=73&sub_region=73","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411283,"text":"Херсонская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411283&vrn=100100339410030&prver=0&pronetvd=null&region=98&sub_region=98","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411266,"text":"Челябинская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411266&vrn=100100339410030&prver=0&pronetvd=null&region=74&sub_region=74","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411267,"text":"Ярославская область","href":"region/izbirkom?action=show&root=1&tvd=100100339411267&vrn=100100339410030&prver=0&pronetvd=null&region=76&sub_region=76","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411268,"text":"город Москва","href":"region/izbirkom?action=show&root=1&tvd=100100339411268&vrn=100100339410030&prver=0&pronetvd=null&region=77&sub_region=77","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411269,"text":"город Санкт-Петербург","href":"region/izbirkom?action=show&root=1&tvd=100100339411269&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":false,"children":[{"id":27820002162291,"text":"Территориальная избирательная комиссия №1","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162291&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162292,"text":"Территориальная избирательная комиссия №2","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162292&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":true,"load_on_demand":false,"children":[{"id":4784002486288,"text":"УИК №158","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486288&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486289,"text":"УИК №159","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486289&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486290,"text":"УИК №160","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486290&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486291,"text":"УИК №161","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486291&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486292,"text":"УИК №162","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486292&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486293,"text":"УИК №163","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486293&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486294,"text":"УИК №164","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486294&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486295,"text":"УИК №165","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486295&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486296,"text":"УИК №166","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486296&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486297,"text":"УИК №167","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486297&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486298,"text":"УИК №168","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486298&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486299,"text":"УИК №169","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486299&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486300,"text":"УИК №170","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486300&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486301,"text":"УИК №171","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486301&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486302,"text":"УИК №172","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486302&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486303,"text":"УИК №173","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486303&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486304,"text":"УИК №174","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486304&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486305,"text":"УИК №175","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486305&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486306,"text":"УИК №176","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486306&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486307,"text":"УИК №177","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486307&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486308,"text":"УИК №178","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486308&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486309,"text":"УИК №179","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486309&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]},{"id":4784002486310,"text":"УИК №182","href":"region/izbirkom?action=show&root=782000083&tvd=4784002486310&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":true,"selected":false,"load_on_demand":false,"children":[]}]},{"id":27820002162233,"text":"Территориальная избирательная комиссия №3","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162233&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162287,"text":"Территориальная избирательная комиссия №4","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162287&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162270,"text":"Территориальная избирательная комиссия №5","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162270&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162226,"text":"Территориальная избирательная комиссия №6   ","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162226&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162306,"text":"Территориальная избирательная комиссия №7 ","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162306&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162272,"text":"Территориальная избирательная комиссия №8","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162272&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162249,"text":"Территориальная избирательная комиссия №9","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162249&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162235,"text":"Территориальная избирательная комиссия №10  ","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162235&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162277,"text":"Территориальная избирательная комиссия №11  ","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162277&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162302,"text":"Территориальная избирательная комиссия №12","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162302&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162273,"text":"Территориальная избирательная комиссия №13","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162273&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162248,"text":"Территориальная избирательная комиссия №14","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162248&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162283,"text":"Территориальная избирательная комиссия №15","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162283&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162218,"text":"Территориальная избирательная комиссия №16  ","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162218&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162244,"text":"Территориальная избирательная комиссия №17","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162244&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162284,"text":"Территориальная избирательная комиссия №18","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162284&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162303,"text":"Территориальная избирательная комиссия №19  ","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162303&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162222,"text":"Территориальная избирательная комиссия №20","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162222&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162234,"text":"Территориальная избирательная комиссия №21","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162234&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162251,"text":"Территориальная избирательная комиссия №22","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162251&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162238,"text":"Территориальная избирательная комиссия №23","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162238&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162262,"text":"Территориальная избирательная комиссия №24  ","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162262&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162215,"text":"Территориальная избирательная комиссия №25","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162215&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162282,"text":"Территориальная избирательная комиссия №26","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162282&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162230,"text":"Территориальная избирательная комиссия №27","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162230&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162214,"text":"Территориальная избирательная комиссия №28","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162214&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162280,"text":"Территориальная избирательная комиссия №29","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162280&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162286,"text":"Территориальная избирательная комиссия №30","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162286&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162216,"text":"Территориальная избирательная комиссия №31","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162216&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162217,"text":"Территориальная избирательная комиссия №32","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162217&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162221,"text":"Территориальная избирательная комиссия №33","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162221&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162281,"text":"Территориальная избирательная комиссия №34","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162281&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162311,"text":"Территориальная избирательная комиссия №35","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162311&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162271,"text":"Территориальная избирательная комиссия №36","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162271&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162239,"text":"Территориальная избирательная комиссия №37  ","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162239&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162250,"text":"Территориальная избирательная комиссия №38","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162250&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162274,"text":"Территориальная избирательная комиссия №39  ","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162274&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162310,"text":"Территориальная избирательная комиссия №40","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162310&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162210,"text":"Территориальная избирательная комиссия №41   ","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162210&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162269,"text":"Территориальная избирательная комиссия №42","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162269&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162252,"text":"Территориальная избирательная комиссия №43","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162252&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162253,"text":"Территориальная избирательная комиссия №44  ","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162253&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162247,"text":"Территориальная избирательная комиссия №45","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162247&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162288,"text":"Территориальная избирательная комиссия №46  ","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162288&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162309,"text":"Территориальная избирательная комиссия №47","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162309&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162298,"text":"Территориальная избирательная комиссия №48","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162298&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162257,"text":"Территориальная избирательная комиссия №49","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162257&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162294,"text":"Территориальная избирательная комиссия №50   ","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162294&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162285,"text":"Территориальная избирательная комиссия №51","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162285&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162245,"text":"Территориальная избирательная комиссия №52","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162245&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162242,"text":"Территориальная избирательная комиссия №53","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162242&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162256,"text":"Территориальная избирательная комиссия №54","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162256&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162268,"text":"Территориальная избирательная комиссия №55","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162268&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162293,"text":"Территориальная избирательная комиссия №56","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162293&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162223,"text":"Территориальная избирательная комиссия №57  ","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162223&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162258,"text":"Территориальная избирательная комиссия №58   ","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162258&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162243,"text":"Территориальная избирательная комиссия №59","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162243&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162232,"text":"Территориальная избирательная комиссия №60","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162232&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162231,"text":"Территориальная избирательная комиссия №61","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162231&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162265,"text":"Территориальная избирательная комиссия №62  ","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162265&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162246,"text":"Территориальная избирательная комиссия №63","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162246&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":27820002162299,"text":"Территориальная избирательная комиссия №64  ","href":"region/izbirkom?action=show&root=1000075&tvd=27820002162299&vrn=100100339410030&prver=0&pronetvd=null&region=78&sub_region=78","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]}]},{"id":100100339411279,"text":"город Севастополь","href":"region/izbirkom?action=show&root=1&tvd=100100339411279&vrn=100100339410030&prver=0&pronetvd=null&region=94&sub_region=94","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411270,"text":"Еврейская автономная область","href":"region/izbirkom?action=show&root=1&tvd=100100339411270&vrn=100100339410030&prver=0&pronetvd=null&region=79&sub_region=79","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411271,"text":"Ненецкий автономный округ","href":"region/izbirkom?action=show&root=1&tvd=100100339411271&vrn=100100339410030&prver=0&pronetvd=null&region=83&sub_region=83","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411272,"text":"Ханты-Мансийский автономный округ - Югра","href":"region/izbirkom?action=show&root=1&tvd=100100339411272&vrn=100100339410030&prver=0&pronetvd=null&region=86&sub_region=86","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411273,"text":"Чукотский автономный округ","href":"region/izbirkom?action=show&root=1&tvd=100100339411273&vrn=100100339410030&prver=0&pronetvd=null&region=87&sub_region=87","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100339411274,"text":"Ямало-Ненецкий автономный округ","href":"region/izbirkom?action=show&root=1&tvd=100100339411274&vrn=100100339410030&prver=0&pronetvd=null&region=89&sub_region=89","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100340344875,"text":"Город Байконур (Республика Казахстан)","href":"region/izbirkom?action=show&root=1&tvd=100100340344875&vrn=100100339410030&prver=0&pronetvd=null&region=0&sub_region=0","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]},{"id":100100340344874,"text":"Территория за пределами РФ","href":"region/izbirkom?action=show&root=1&tvd=100100340344874&vrn=100100339410030&prver=0&pronetvd=null&region=0&sub_region=0","prver":"0","isUik":false,"selected":false,"load_on_demand":true,"children":[]}]}
+
+        
+
+    
+
+        function iterateTree(node, li) {
+
+            if (node.children.length > 0) {
+
+                var ul = createUl(li);
+
+                node.children.forEach(el => {
+
+                    var liChild = createLi(ul, el);
+
+                    iterateTree(el, liChild);
+
+                })
+
+            }
+
+        }
+
+
+
+    function addChildren(data, li) {
+
+        var ul = createUl(li);
+
+        data.forEach(el => {
+
+            //var liChild = createLi(ul, el);
+
+            createLi(ul, el);
+
+            //iterateTree(el,liChild);
+
+        })
+
+    }
+
+
+
+    function createUl(element) {
+
+        var ul = $('<ul></ul>');
+
+        ul.appendTo(element);
+
+        return ul;
+
+        //return element.append('<ul></ul>').children("ul:first-child");
+
+    }
+
+
+
+    var height;
+
+    var heightPercent;
+
+    var arrOpen = '<svg width="8" height="12" viewBox="0 0 8 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0.578125 1.40625L1.98438 0L7.98438 6L1.98438 12L0.578125 10.5938L5.17188 6L0.578125 1.40625Z" fill="#1A7FC7"/> </svg>';
+
+    var arrClose = '<svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"> <path d="M10.5938 0.578125L12 1.98438L6 7.98438L0 1.98438L1.40625 0.578125L6 5.17188L10.5938 0.578125Z" fill="#13232F"/> </svg>';
+
+    var opened = '<svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6 11.2188L16.5938 0.578125L18 1.98438L6 13.9844L0.421875 8.40625L1.78125 7L6 11.2188Z" fill="#1A7FC7"/></svg>';
+
+    var tree = '<i class="material-icons" style="color: #1A7FC7;">account_tree</i>'
+
+
+
+    var vibidUrl = report_id === vrnvibref ? ("&vibid=" + report_id) : "";
+
+    // /*+  (report_id != null && report_id !== "null" ? " (&vibid=" + report_id) : '') */
+
+    var reportModeUrl = report_mode !== "" ? "&report_mode=" + report_mode : "";
+
+    var selectedPrver;
+
+
+
+    function createLi(element, obj) {
+
+        let button = "";
+
+        let need_load = obj.load_on_demand ? "need-load" : "";
+
+        if (!obj.isUik) {
+
+            if (obj.children.length > 0) {
+
+                button = "<a class='tree-open " + need_load + "' >" + arrClose + "</a>";
+
+            } else {
+
+                button = "<a class='tree-close " + need_load + "'>" + arrOpen + "</a>";
+
+            }
+
+        }
+
+        if (obj.selected) {
+
+            selectedPrver = obj.prver;
+
+        }
+
+        element.append('<li id="' + obj.id + '" class="tree-li">' + button + "<a  class='" + (obj.selected ? "selected-li" : "") + "' href='" + obj.href + "&type=" + vid + vibidUrl + reportModeUrl + "'> " + obj.text + "</a> " + (obj.selected ? opened : "") + '</li>');
+
+        //document.getElementById(obj.id).appendChild(buttonNode);
+
+        //$('#'+obj.id).append(button);
+
+        return $('#' + obj.id);
+
+    }
+
+
+
+
+
+    //&#9658;
+
+    //&#9660;
+
+
+
+    function closeTree() {
+
+        height = $('#jstree_demo_div').height();
+
+        heightTranslate = height / 2 - 22;
+
+        $('#jstree_demo_div').css('height', height + 'px');
+
+        $('.hideTreeIcon').css('transform', 'rotate(180deg)').css('transition-duration', '0.5s');
+
+        //$('.hideTreeIcon').css('transform', 'translate(0,'+''+heightTranslate+'px'+') rotate(180deg)').css('transition-duration','0.5s');
+
+        //$('#jstree_demo_div').css('background','transparent');
+
+        $('#jstree_demo_div').css('max-width', '2%').css('transition-duration', '0.5s');
+
+        $('.tvd').css('opacity', '0').css('transition-duration', '0.5s');
+
+        $('#jstree_demo_div ul').css('opacity', '0').css('transition-duration', '0.5s');
+
+        $(this).removeClass('hideTreeIcon').addClass('showTreeIcon');
+
+        $('#jstree_demo_div').addClass('swapped');
+
+        localStorage.setItem("treeState", "true");
+
+        //$('.tree').hide();
+
+        //$('.treeIcon').show();
+
+    }
+
+
+
+    function openTree() {
+
+        $('#jstree_demo_div').removeClass('swapped')
+
+        //$('.tree').show();
+
+        //$('.treeIcon').hide();
+
+        //$('.showTreeIcon').css('transform', 'translate(0px, 0px) rotate(1deg)').css('transition-duration','0.5s');
+
+        $('.showTreeIcon').css('transform', 'rotate(1deg)').css('transition-duration', '0.5s');
+
+        $('#jstree_demo_div').css('max-width', '100%').css('height', '100%').css('transition-duration', '0.5s');
+
+        ;
+
+        $('#jstree_demo_div ul').css('opacity', '1').css('transition-duration', '0.5s');
+
+        $('.tvd').css('opacity', '1').css('transition-duration', '0.5s');
+
+        $('.showTreeIcon').removeClass('showTreeIcon').addClass('hideTreeIcon');
+
+        localStorage.setItem("treeState", "false");
+
+    }
+
+
+
+
+
+    if (tvdTreeJson != "") {
+
+        var mainul = createUl($('#jstree_demo_div'));
+
+        var mainli = createLi(mainul, tvdTreeJson);
+
+        iterateTree(tvdTreeJson, mainli);
+
+
+
+
+
+        $(document).ready(function () {
+
+            $(document).on('click', '.hideTreeIcon', closeTree);
+
+            $(document).on('click', '.swapped', openTree);
+
+
+
+            $(document).on('click', '.tree-open', function () {
+
+                //$(this).next().next().next().css("display", "none");
+
+                //$(this).closest('ul').css("display", "none");
+
+                //$(this).next().next('ul').css("display", "none");
+
+                $(this).parent().find('ul').css("display", "none");
+
+                $(this).removeClass('tree-open').addClass('tree-close');
+
+                $(this).html(arrOpen);
+
+            });
+
+
+
+            if ($('#0').length > 0 && selectedPrver === "1") {
+
+                $('#0').children(":first").removeClass('tree-open').addClass('tree-close');
+
+                $('#0').children(":first").html(arrOpen);
+
+                $('#0').children('ul').css("display", "none");
+
+            }
+
+
+
+            $(document).on('click', '.need-load', function () {
+
+                $(this).removeClass('need-load');
+
+                var tvd = $(this).parent().attr('id');
+
+                var url = "/region/izbirkom?action=tvdTree&tvdchildren=true&vrn=" + vrnvibref + "&tvd=" + tvd;
+
+                var parent = $(this).parent();
+
+                $.ajax({
+
+                    type: "GET",
+
+                    url: url,
+
+                    beforeSend: function () {
+
+                        $(".loader-template").show();
+
+                    },
+
+                    success: function (data) {
+
+                        addChildren(data, parent);
+
+                        $(".loader-template").hide();
+
+                    }
+
+                });
+
+
+
+                //
+
+                // $.get(url, function (data) {
+
+                // 	addChildren(data, parent);
+
+                // })
+
+                // $(this).next().next().css("display", "none");
+
+                // $(this).removeClass('tree-open').addClass('tree-close');
+
+                // $(this).html("&#9658;");
+
+            });
+
+
+
+
+
+            $(document).on('click', '.tree-close', function () {
+
+                //$(this).next().next().next().css("display", "block");
+
+                //$(this).closest('ul').css("display", "block");
+
+                $(this).parent().find('ul').css("display", "block");
+
+                //$(this).next().next('ul').css("display", "block");
+
+                $(this).removeClass('tree-close').addClass('tree-open');
+
+                $(this).html(arrClose);
+
+            });
+
+
+
+            // $(".tree-close").click(function() {
+
+
+
+            // });
+
+        });
+
+    }
+
+
+
+
+
+    
+
+    $('#report-body > .date-generation').hide();
+
+    $('#report-body-link').tab('show');
+
+
+
+    
+
+    $(window).on("unload", function (e) {
+
+    });
+
+    $(window).bind("unload", function () {
+
+    });
+
+    $(window).bind("pageshow", function (event) {
+
+        if (event.originalEvent.persisted) {
+
+            window.location.reload()
+
+        }
+
+    });
+
+
+
+</script>
+<style>
+
+    .tree-li a {
+
+        cursor: pointer;
+
+    }
+
+
+
+    .tree-li {
+
+        list-style: none;
+
+    }
+
+
+
+    .ul-open {
+
+
+
+    }
+
+
+
+    .ul-close {
+
+
+
+    }
+
+
+
+</style>
+<script src="js/bvi/js.cookie.min.js" type="text/javascript"></script>
+<script src="js/bvi/bvi-init.min.js" type="text/javascript"></script>
+<script src="js/bvi/bvi.js" type="text/javascript"></script>
+<script>
+
+
+
+
+
+    function isElementInViewport(el) {
+
+        var rect = el.getBoundingClientRect();
+
+
+
+        return rect.bottom > 0 && rect.top < (window.innerHeight || document.documentElement.clientHeight) /* or $(window).height() */;
+
+    }
+
+
+
+    function showVib() {
+
+
+
+
+
+        let elems = document.querySelectorAll('.vibory-list-item')
+
+        Array.prototype.forEach.call(elems, function (node) {
+
+            if (!isElementInViewport(node)) return
+
+            var currentNode = node.nextElementSibling;
+
+            var cnt = 0;
+
+            while (!currentNode.classList.contains('vibory-list-item') && cnt <= 50) {
+
+                currentNode.classList.remove('hidden-vibory');
+
+                currentNode = currentNode.nextElementSibling;
+
+                cnt++;
+
+            }
+
+        })
+
+        elems = document.querySelectorAll('.list-group-item')
+
+        Array.prototype.forEach.call(elems, function (node) {
+
+            if (!isElementInViewport(node)) return
+
+            var currentNode = node;
+
+            var cnt = 0;
+
+
+
+            while (cnt <= 50) {
+
+                if (currentNode != null) {
+
+                    currentNode.classList.remove('hidden-vibory');
+
+                    currentNode = currentNode.previousSibling;
+
+
+
+                }
+
+                cnt++;
+
+            }
+
+            currentNode = node;
+
+            cnt = 0;
+
+
+
+            while (cnt <= 50) {
+
+                if (currentNode != null) {
+
+                    currentNode.classList.remove('hidden-vibory');
+
+                    currentNode = currentNode.nextElementSibling;
+
+                }
+
+                cnt++;
+
+            }
+
+        })
+
+    }
+
+
+
+    window.addEventListener('scroll', showVib, {capture: true});
+
+</script>
+</body>
+</html>
